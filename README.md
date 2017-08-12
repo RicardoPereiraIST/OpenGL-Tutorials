@@ -25,7 +25,7 @@ All the resources are either from Google or linked in Joey's tutorial.
 >
 > PBR textures aren't being properly applied to a model (PBR_with_Model.cpp).
 
-#### Incoming:
+### Incoming:
 
 > Finish all tutorials (2D Game).
 >
