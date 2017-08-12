@@ -3,14 +3,14 @@
 This is my attempt at following Joey de Vries OpenGL tutorials (https://learnopengl.com/).
 
 There are multiple dependencies:
->* Assimp
->* Boost
->* Freetype
->* GLAD
->* GLFW
->* GLM
->* Stbi
->* Vld
+>* [Assimp](http://assimp.org/)
+>* [Boost](http://www.boost.org/)
+>* [Freetype](https://www.freetype.org/)
+>* [GLAD](https://github.com/Dav1dde/glad)
+>* [GLFW](http://www.glfw.org/)
+>* [GLM](https://glm.g-truc.net)
+>* [Stbi](https://github.com/nothings/stb/blob/master/stb_image.h)
+>* [Vld](https://vld.codeplex.com/)
 
 All the resources are either from Google or linked in Joey's tutorial.
 
@@ -28,6 +28,8 @@ All the resources are either from Google or linked in Joey's tutorial.
 ##### Incoming:
 
 > Finish all tutorials (2D Game).
+>
+> Understand and correct problems.
 >
 > Implement other lights in parallax (Normal_parallax_mapping.cpp).
 >
