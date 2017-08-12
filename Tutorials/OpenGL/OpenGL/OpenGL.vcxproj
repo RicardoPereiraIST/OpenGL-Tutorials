@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B83339BE-D7F5-46BA-B78A-EC61C7579628}</ProjectGuid>
+    <RootNamespace>OpenGL</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)\..\..\Dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\..\Dependencies\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>assimp-vc140-mt.dll;$(ExecutablePath)</ExecutablePath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)\..\..\Dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\..\Dependencies\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>assimp-vc140-mt.dll;$(ExecutablePath)</ExecutablePath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)\..\..\Dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\..\Dependencies\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>assimp-vc140-mt.dll;$(ExecutablePath)</ExecutablePath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)\..\..\Dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\..\Dependencies\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>assimp-vc140-mt.dll;$(ExecutablePath)</ExecutablePath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalUsingDirectories>$(SolutionDir)\..\..\Dependencies\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalUsingDirectories>$(SolutionDir)\..\..\Dependencies\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalUsingDirectories>$(SolutionDir)\..\..\Dependencies\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalUsingDirectories>$(SolutionDir)\..\..\Dependencies\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c" />
+    <ClCompile Include="Programs\Advanced\Advanced.cpp" />
+    <ClCompile Include="Programs\Anti_Aliasing\Anti_aliasing.cpp" />
+    <ClCompile Include="Programs\Blinn_Phong\Blinn_Phong.cpp" />
+    <ClCompile Include="Programs\Bloom\Bloom.cpp" />
+    <ClCompile Include="Programs\Deferred_Shading\Deferred_Shading.cpp" />
+    <ClCompile Include="Programs\FinalShadows\FinalShadows.cpp" />
+    <ClCompile Include="Programs\Geometry_Shader\Geometry_Shader.cpp" />
+    <ClCompile Include="Programs\HDR\HDR.cpp" />
+    <ClCompile Include="Programs\Instancing\Instancing.cpp" />
+    <ClCompile Include="Programs\Normal_Parallax_Mapping\Normal_parallax_mapping.cpp" />
+    <ClCompile Include="Programs\Original\Original.cpp" />
+    <ClCompile Include="Programs\PBR\PBR.cpp" />
+    <ClCompile Include="Programs\PBR\PBR_with_Model.cpp" />
+    <ClCompile Include="Programs\PBR\PBR_with_textures.cpp" />
+    <ClCompile Include="Programs\Render_Text\Render_Text.cpp" />
+    <ClCompile Include="Programs\Shaders_variables\Shaders_variables.cpp" />
+    <ClCompile Include="Programs\SSAO\SSAO.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Cerberus_by_Andrew_Maximov\Cerberus.tbscene" />
+    <None Include="Models\Cerberus_by_Andrew_Maximov\Cerberus_LP.FBX" />
+    <None Include="Models\Cyborg\Cyborg.mtl" />
+    <None Include="Models\nanosuit_reflection\nanosuit.mtl" />
+    <None Include="Models\planet\planet.mtl" />
+    <None Include="Models\rock\rock.mtl" />
+    <None Include="nanosuit\nanosuit.blend" />
+    <None Include="nanosuit\nanosuit.mtl" />
+    <None Include="Shaders\Advanced\depth.fs" />
+    <None Include="Shaders\Advanced\depth.vs" />
+    <None Include="Shaders\Advanced\fbo_screen.fs" />
+    <None Include="Shaders\Advanced\fbo_screen.vs" />
+    <None Include="Shaders\Advanced\reflect_cubemap.fs" />
+    <None Include="Shaders\Advanced\reflect_cubemap.vs" />
+    <None Include="Shaders\Advanced\shader_single_color.fs" />
+    <None Include="Shaders\Advanced\shader_single_color.vs" />
+    <None Include="Shaders\Advanced\skybox.fs" />
+    <None Include="Shaders\Advanced\skybox.vs" />
+    <None Include="Shaders\Anti_Aliasing\anti_aliasing.fs" />
+    <None Include="Shaders\Anti_Aliasing\anti_aliasing.vs" />
+    <None Include="Shaders\Anti_Aliasing\simple_post.fs" />
+    <None Include="Shaders\Anti_Aliasing\simple_post.vs" />
+    <None Include="Shaders\Blinn_Phong\blinn_phong.fs" />
+    <None Include="Shaders\Blinn_Phong\blinn_phong.vs" />
+    <None Include="Shaders\Blinn_Phong\gamma.fs" />
+    <None Include="Shaders\Blinn_Phong\gamma.vs" />
+    <None Include="Shaders\Bloom\bloom.fs" />
+    <None Include="Shaders\Bloom\bloom.vs" />
+    <None Include="Shaders\Bloom\bloom_final.fs" />
+    <None Include="Shaders\Bloom\bloom_final.vs" />
+    <None Include="Shaders\Bloom\blur.fs" />
+    <None Include="Shaders\Bloom\blur.vs" />
+    <None Include="Shaders\Bloom\light_box.fs" />
+    <None Include="Shaders\Deffered_Shading\deferred_light_box.fs" />
+    <None Include="Shaders\Deffered_Shading\deferred_light_box.vs" />
+    <None Include="Shaders\Deffered_Shading\deferred_shading.fs" />
+    <None Include="Shaders\Deffered_Shading\deferred_shading.vs" />
+    <None Include="Shaders\Deffered_Shading\g_buffer.fs" />
+    <None Include="Shaders\Deffered_Shading\g_buffer.vs" />
+    <None Include="Shaders\FinalShadows\debug_quad.fs" />
+    <None Include="Shaders\FinalShadows\debug_quad.vs" />
+    <None Include="Shaders\FinalShadows\depth_shadow.fs" />
+    <None Include="Shaders\FinalShadows\depth_shadow.vs" />
+    <None Include="Shaders\FinalShadows\final_shadows.fs" />
+    <None Include="Shaders\FinalShadows\final_shadows.vs" />
+    <None Include="Shaders\FinalShadows\point_depth_shadow.fs" />
+    <None Include="Shaders\FinalShadows\point_depth_shadow.gs" />
+    <None Include="Shaders\FinalShadows\point_depth_shadow.vs" />
+    <None Include="Shaders\FinalShadows\shadow_cube.fs" />
+    <None Include="Shaders\FinalShadows\shadow_cube.vs" />
+    <None Include="Shaders\FinalShadows\shadow_mapping.fs" />
+    <None Include="Shaders\FinalShadows\shadow_mapping.vs" />
+    <None Include="Shaders\Geometry_Shader\explode_model.fs" />
+    <None Include="Shaders\Geometry_Shader\explode_model.gs" />
+    <None Include="Shaders\Geometry_Shader\explode_model.vs" />
+    <None Include="Shaders\Geometry_Shader\geometry.fs" />
+    <None Include="Shaders\Geometry_Shader\geometry.gs" />
+    <None Include="Shaders\Geometry_Shader\geometry.vs" />
+    <None Include="Shaders\Geometry_Shader\normal_model.fs" />
+    <None Include="Shaders\Geometry_Shader\normal_model.vs" />
+    <None Include="Shaders\Geometry_Shader\visualize_normals.fs" />
+    <None Include="Shaders\Geometry_Shader\visualize_normals.gs" />
+    <None Include="Shaders\Geometry_Shader\visualize_normals.vs" />
+    <None Include="Shaders\HDR\hdr.fs" />
+    <None Include="Shaders\HDR\hdr.vs" />
+    <None Include="Shaders\HDR\hdr_lights.fs" />
+    <None Include="Shaders\HDR\hdr_lights.vs" />
+    <None Include="Shaders\Instancing\instancing_asteroids.vs" />
+    <None Include="Shaders\Instancing\instancing_planets.fs" />
+    <None Include="Shaders\Instancing\instancing_planets.vs" />
+    <None Include="Shaders\Normal_Parallax_Mapping\normal_parallax_mapping.fs" />
+    <None Include="Shaders\Normal_Parallax_Mapping\normal_parallax_mapping.vs" />
+    <None Include="Shaders\Original\light_maps.vs" />
+    <None Include="Shaders\Original\model.fs" />
+    <None Include="Shaders\Original\reflect_cubemap.fs" />
+    <None Include="Shaders\Original\reflect_cubemap.vs" />
+    <None Include="Shaders\Original\refract_cubemap.fs" />
+    <None Include="Shaders\Original\simple_light_shader.fs" />
+    <None Include="Shaders\Original\simple_light_shader.vs" />
+    <None Include="Shaders\Original\skybox.fs" />
+    <None Include="Shaders\Original\skybox.vs" />
+    <None Include="Shaders\PBR\background.fs" />
+    <None Include="Shaders\PBR\background.vs" />
+    <None Include="Shaders\PBR\brdf.fs" />
+    <None Include="Shaders\PBR\brdf.vs" />
+    <None Include="Shaders\PBR\cubemap.vs" />
+    <None Include="Shaders\PBR\equirectangular_to_cubemap.fs" />
+    <None Include="Shaders\PBR\irradiance_convolution.fs" />
+    <None Include="Shaders\PBR\pbr.fs" />
+    <None Include="Shaders\PBR\pbr.vs" />
+    <None Include="Shaders\PBR\pbr_textures.fs" />
+    <None Include="Shaders\PBR\pbr_textures.vs" />
+    <None Include="Shaders\PBR\prefilter.fs" />
+    <None Include="Shaders\Shaders_variables\blue.fs" />
+    <None Include="Shaders\Shaders_variables\fbo_screen.fs" />
+    <None Include="Shaders\Shaders_variables\fbo_screen.vs" />
+    <None Include="Shaders\Shaders_variables\green.fs" />
+    <None Include="Shaders\Shaders_variables\pointsize.fs" />
+    <None Include="Shaders\Shaders_variables\pointsize.vs" />
+    <None Include="Shaders\Shaders_variables\red.fs" />
+    <None Include="Shaders\Shaders_variables\reflect_cubemap.fs" />
+    <None Include="Shaders\Shaders_variables\reflect_cubemap.vs" />
+    <None Include="Shaders\Shaders_variables\shader_single_color.fs" />
+    <None Include="Shaders\Shaders_variables\shader_single_color.vs" />
+    <None Include="Shaders\Shaders_variables\skybox.fs" />
+    <None Include="Shaders\Shaders_variables\skybox.vs" />
+    <None Include="Shaders\Shaders_variables\yellow.fs" />
+    <None Include="Shaders\SSAO\ssao.fs" />
+    <None Include="Shaders\SSAO\ssao.vs" />
+    <None Include="Shaders\SSAO\ssao_blur.fs" />
+    <None Include="Shaders\SSAO\ssao_geometry.fs" />
+    <None Include="Shaders\SSAO\ssao_geometry.vs" />
+    <None Include="Shaders\SSAO\ssao_lighting.fs" />
+    <None Include="Shaders\Text\text.fs" />
+    <None Include="Shaders\Text\text.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Classes\Camera\Camera.h" />
+    <ClInclude Include="Classes\Camera\CameraManager.h" />
+    <ClInclude Include="Classes\Debug\Debug.h" />
+    <ClInclude Include="Classes\FrameBuffer\FrameBuffer.h" />
+    <ClInclude Include="Classes\FrameBuffer\FrameBufferManager.h" />
+    <ClInclude Include="Classes\Light\Directional_Light.h" />
+    <ClInclude Include="Classes\Light\Light.h" />
+    <ClInclude Include="Classes\Light\LightManager.h" />
+    <ClInclude Include="Classes\Light\Point_Light.h" />
+    <ClInclude Include="Classes\Light\Spotlight.h" />
+    <ClInclude Include="Classes\Model\Mesh.h" />
+    <ClInclude Include="Classes\Model\Model.h" />
+    <ClInclude Include="Classes\Model\ModelManager.h" />
+    <ClInclude Include="Classes\Shader\Shader.h" />
+    <ClInclude Include="Classes\Shader\ShaderManager.h" />
+    <ClInclude Include="Classes\Texture\TextureLoader.h" />
+    <ClInclude Include="Classes\Texture\TextureManager.h" />
+    <ClInclude Include="Classes\Text\TextRenderer.h" />
+    <ClInclude Include="Classes\Text\TextRendererManager.h" />
+    <ClInclude Include="Classes\UBO\Ubo.h" />
+    <ClInclude Include="Classes\UBO\UboManager.h" />
+    <ClInclude Include="Classes\Vertex\VertexBuffers.h" />
+    <ClInclude Include="Classes\Vertex\VertexManager.h" />
+    <ClInclude Include="Dependencies\stb_image.h" />
+    <ClInclude Include="Includes\Cameras.h" />
+    <ClInclude Include="Includes\Engine.h" />
+    <ClInclude Include="Includes\FrameBuffers.h" />
+    <ClInclude Include="Includes\Libraries.h" />
+    <ClInclude Include="Includes\Lights.h" />
+    <ClInclude Include="Includes\Models.h" />
+    <ClInclude Include="Includes\Shaders.h" />
+    <ClInclude Include="Includes\TextRenderers.h" />
+    <ClInclude Include="Includes\Textures.h" />
+    <ClInclude Include="Includes\Ubos.h" />
+    <ClInclude Include="Includes\Vertices.h" />
+    <ClInclude Include="Programs\Advanced\Advanced.h" />
+    <ClInclude Include="Programs\Anti_Aliasing\Anti_aliasing.h" />
+    <ClInclude Include="Programs\Blinn_Phong\Blinn_Phong.h" />
+    <ClInclude Include="Programs\Bloom\Bloom.h" />
+    <ClInclude Include="Programs\Deferred_Shading\Deferred_Shading.h" />
+    <ClInclude Include="Programs\FinalShadows\FinalShadows.h" />
+    <ClInclude Include="Programs\Geometry_Shader\Geometry_Shader.h" />
+    <ClInclude Include="Programs\HDR\HDR.h" />
+    <ClInclude Include="Programs\Instancing\Instancing.h" />
+    <ClInclude Include="Programs\Normal_Parallax_Mapping\Normal_parallax_mapping.h" />
+    <ClInclude Include="Programs\Original\Original.h" />
+    <ClInclude Include="Programs\PBR\PBR.h" />
+    <ClInclude Include="Programs\Render_Text\Render_Text.h" />
+    <ClInclude Include="Programs\Shaders_variables\Shaders_variables.h" />
+    <ClInclude Include="Programs\SSAO\SSAO.h" />
+    <ClInclude Include="Random data\multiple_vertices.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Images\containers\container.jpg" />
+    <Image Include="Images\containers\container2.png" />
+    <Image Include="Images\containers\container2_specular.png" />
+    <Image Include="Images\containers\lighting_maps_specular_color.png" />
+    <Image Include="Images\containers\matrix.jpg" />
+    <Image Include="Images\faces\awesomeface.png" />
+    <Image Include="Images\floor\Dark-Wood-Texture.jpg" />
+    <Image Include="Images\floor\example_Wood.png" />
+    <Image Include="Images\floor\floor.jpg" />
+    <Image Include="Images\floor\grass.png" />
+    <Image Include="Images\floor\vector-wood-texture.jpg" />
+    <Image Include="Images\floor\wood-textures_00311175.png" />
+    <Image Include="Images\floor\wood.png" />
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_basecolor-boosted.png" />
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_basecolor.png" />
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_metallic.png" />
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_normal.png" />
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_roughness.png" />
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-albedo3.png" />
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-ao.png" />
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-height.png" />
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-normal2.png" />
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-rough.png" />
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-albedo.png" />
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-ao.png" />
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-metalness.png" />
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-normal2b.png" />
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-roughness2.png" />
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-albedo.png" />
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-ao.png" />
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-height4b.png" />
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-metalness.png" />
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-normal.png" />
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-rough.png" />
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_ao.png" />
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_basecolor.png" />
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_metallic.png" />
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_normal.png" />
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_roughness.png" />
+    <Image Include="Images\skyboxes\Newport_Loft\Newport_Loft_8k.jpg" />
+    <Image Include="Images\skyboxes\Newport_Loft\Newport_Loft_preview.jpg" />
+    <Image Include="Images\skyboxes\Newport_Loft\Newport_Loft_Thumb.jpg" />
+    <Image Include="Images\skyboxes\skybox\back.jpg" />
+    <Image Include="Images\skyboxes\skybox\bottom.jpg" />
+    <Image Include="Images\skyboxes\skybox\front.jpg" />
+    <Image Include="Images\skyboxes\skybox\left.jpg" />
+    <Image Include="Images\skyboxes\skybox\right.jpg" />
+    <Image Include="Images\skyboxes\skybox\top.jpg" />
+    <Image Include="Images\toy_box\toy_box_disp.png" />
+    <Image Include="Images\toy_box\toy_box_normal.png" />
+    <Image Include="Images\walls\bricks2.jpg" />
+    <Image Include="Images\walls\bricks2_disp.jpg" />
+    <Image Include="Images\walls\bricks2_normal.jpg" />
+    <Image Include="Images\walls\brickwall.jpg" />
+    <Image Include="Images\walls\brickwall_normal.jpg" />
+    <Image Include="Images\walls\wall.jpg" />
+    <Image Include="Images\windows\blending_transparent_window.png" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_A.png" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_A.tga" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_AO.png" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_M.png" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_M.tga" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_N.png" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_N.tga" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_R.png" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_R.tga" />
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Raw\Cerberus_AO.tga" />
+    <Image Include="Models\Cyborg\Cyborg_D.tga" />
+    <Image Include="Models\Cyborg\Cyborg_N.tga" />
+    <Image Include="Models\Cyborg\Cyborg_S.tga" />
+    <Image Include="Models\nanosuit_reflection\arm_dif.png" />
+    <Image Include="Models\nanosuit_reflection\arm_showroom_ddn.png" />
+    <Image Include="Models\nanosuit_reflection\arm_showroom_refl.png" />
+    <Image Include="Models\nanosuit_reflection\arm_showroom_spec.png" />
+    <Image Include="Models\nanosuit_reflection\body_dif.png" />
+    <Image Include="Models\nanosuit_reflection\body_showroom_ddn.png" />
+    <Image Include="Models\nanosuit_reflection\body_showroom_refl.png" />
+    <Image Include="Models\nanosuit_reflection\body_showroom_spec.png" />
+    <Image Include="Models\nanosuit_reflection\glass_ddn.png" />
+    <Image Include="Models\nanosuit_reflection\glass_dif.png" />
+    <Image Include="Models\nanosuit_reflection\glass_refl.png" />
+    <Image Include="Models\nanosuit_reflection\hand_dif.png" />
+    <Image Include="Models\nanosuit_reflection\hand_showroom_ddn.png" />
+    <Image Include="Models\nanosuit_reflection\hand_showroom_refl.png" />
+    <Image Include="Models\nanosuit_reflection\hand_showroom_spec.png" />
+    <Image Include="Models\nanosuit_reflection\helmet_diff.png" />
+    <Image Include="Models\nanosuit_reflection\helmet_showroom_ddn.png" />
+    <Image Include="Models\nanosuit_reflection\helmet_showroom_refl.png" />
+    <Image Include="Models\nanosuit_reflection\helmet_showroom_spec.png" />
+    <Image Include="Models\nanosuit_reflection\leg_dif.png" />
+    <Image Include="Models\nanosuit_reflection\leg_showroom_ddn.png" />
+    <Image Include="Models\nanosuit_reflection\leg_showroom_refl.png" />
+    <Image Include="Models\nanosuit_reflection\leg_showroom_spec.png" />
+    <Image Include="Models\planet\planet_Quom1200.png" />
+    <Image Include="Models\rock\Rock-Texture-Surface.jpg" />
+    <Image Include="nanosuit\arm_dif.png" />
+    <Image Include="nanosuit\arm_showroom_ddn.png" />
+    <Image Include="nanosuit\arm_showroom_spec.png" />
+    <Image Include="nanosuit\body_dif.png" />
+    <Image Include="nanosuit\body_showroom_ddn.png" />
+    <Image Include="nanosuit\body_showroom_spec.png" />
+    <Image Include="nanosuit\glass_ddn.png" />
+    <Image Include="nanosuit\glass_dif.png" />
+    <Image Include="nanosuit\hand_dif.png" />
+    <Image Include="nanosuit\hand_showroom_ddn.png" />
+    <Image Include="nanosuit\hand_showroom_spec.png" />
+    <Image Include="nanosuit\helmet_diff.png" />
+    <Image Include="nanosuit\helmet_showroom_ddn.png" />
+    <Image Include="nanosuit\helmet_showroom_spec.png" />
+    <Image Include="nanosuit\leg_dif.png" />
+    <Image Include="nanosuit\leg_showroom_ddn.png" />
+    <Image Include="nanosuit\leg_showroom_spec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Fonts\Arial\arial.ttf" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,1134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Models">
+      <UniqueIdentifier>{e03e0505-0174-4512-810b-f131f99c35a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models\nanosuit">
+      <UniqueIdentifier>{9dfb0fec-f3f8-4874-a0c6-67c6bb6c7ac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{6e1a33b1-2527-42ce-9774-c8c010832d8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images">
+      <UniqueIdentifier>{93dcd1d8-7416-401e-ba01-9e604780cd50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dependencies">
+      <UniqueIdentifier>{66897731-edfa-4770-875c-415a32303976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Random data">
+      <UniqueIdentifier>{ac292eaf-cd97-4d72-8014-1c6583d9cabf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes">
+      <UniqueIdentifier>{b67ded9d-b518-4975-93e4-b2e2e728128d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Light">
+      <UniqueIdentifier>{9a7d1e46-716b-494b-91c9-9ae54d47f1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Shader">
+      <UniqueIdentifier>{b1e5f73c-21e7-4a2a-9f1e-354f8647b206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Camera">
+      <UniqueIdentifier>{397ca482-7fe6-4344-89f3-415daef2e7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Model">
+      <UniqueIdentifier>{c3033f0c-322d-4ac7-b079-9eebea9b5ec5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Vertex">
+      <UniqueIdentifier>{4ce1d9f4-0295-471c-9664-b34f40c400ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\FrameBuffer">
+      <UniqueIdentifier>{52976880-ecf8-44ec-9761-4b8863d38f2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Includes">
+      <UniqueIdentifier>{f1a3bb19-1d25-4243-a35c-48eb385ccbb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models\nanosuit_reflection">
+      <UniqueIdentifier>{690f3cfa-82d9-4c71-9c91-7b43f07bf39f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\UBO">
+      <UniqueIdentifier>{aa994e4f-2813-4a65-a8c1-4f95c6506f0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models\rock">
+      <UniqueIdentifier>{f7f0ed5f-f0b3-4846-b293-cb049b9d0340}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models\planet">
+      <UniqueIdentifier>{9dda7278-0995-4b2b-b689-b5fa21292821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models\Cyborg">
+      <UniqueIdentifier>{1f1b4500-ee43-431e-9e72-d7fab2f4d29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models\Cerberus_by_Andrew_Maximov">
+      <UniqueIdentifier>{1dc4d3f2-cc87-4cf4-a267-a2761c3170bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Texture">
+      <UniqueIdentifier>{32c30903-eb66-4f63-b940-df50fcf3923c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs">
+      <UniqueIdentifier>{71381c31-c1db-41d1-906a-5790d1e98d9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Advanced">
+      <UniqueIdentifier>{d285d290-0a7c-436c-8ee9-884a616500b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Anti_Aliasing">
+      <UniqueIdentifier>{6a55d2f2-0472-47ac-b397-e4c60d40eef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Blinn_Phong">
+      <UniqueIdentifier>{55892eb9-b389-4512-89b5-2b896bd6c5ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Bloom">
+      <UniqueIdentifier>{f8604077-aa73-400d-b375-0a450154dc03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\FinalShadows">
+      <UniqueIdentifier>{2e72072f-d812-4a7a-b51f-51b86a08e82c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Geometry_Shader">
+      <UniqueIdentifier>{8fc3af15-ab8b-4682-9dde-afd0710bc689}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\HDR">
+      <UniqueIdentifier>{1a5c5a0d-c683-46e1-b219-128426951dda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Instancing">
+      <UniqueIdentifier>{0ce5cf1f-8beb-4800-a442-0c1f04fe1641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Normal_Parallax_Mapping">
+      <UniqueIdentifier>{e9a9a7a7-0ece-4fe6-86b0-6f38b6c05532}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Original">
+      <UniqueIdentifier>{37795875-0956-4465-b638-04d36611d07a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\PBR">
+      <UniqueIdentifier>{64ef1288-c341-493b-ab00-e08ec1238bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Shaders_variables">
+      <UniqueIdentifier>{2ad9e439-f17f-427f-a2a9-b9a2ab30f74e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\SSAO">
+      <UniqueIdentifier>{3efbba94-0455-4e86-8515-6e85e8ee3746}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Advanced">
+      <UniqueIdentifier>{7db93036-4223-479a-a27e-cb0dee3d10d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Anti_Aliasing">
+      <UniqueIdentifier>{5438c7cc-39c2-478b-8f0b-6433a53bfd07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Blinn_Phong">
+      <UniqueIdentifier>{15d35434-a10d-439e-a4a1-54bcf77c3c0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Bloom">
+      <UniqueIdentifier>{06ce2978-5abb-4052-af89-52cbdc3e8472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\FinalShadows">
+      <UniqueIdentifier>{d1f177a7-2888-4da9-b544-4137f3d1cf5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Geometry_Shader">
+      <UniqueIdentifier>{201083b6-dcdd-4557-a051-39bfa432129b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\HDR">
+      <UniqueIdentifier>{ef9235ec-8808-4076-990a-ee7d96324240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Instancing">
+      <UniqueIdentifier>{340c69f9-72d8-4d1f-815e-c840cc64e933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\SSAO">
+      <UniqueIdentifier>{ca6da6de-90d7-4f43-9002-ea9d26ad9dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Shaders_variables">
+      <UniqueIdentifier>{e7657a6c-3858-45f6-8cf2-b3bdb3b174bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Original">
+      <UniqueIdentifier>{000e5b66-8a93-4af5-897f-d02b71ab578c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Normal_Parallax_Mapping">
+      <UniqueIdentifier>{e628868b-fd14-4622-a644-60ea5f958105}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\PBR">
+      <UniqueIdentifier>{1c40bf60-bde7-45fe-a8d9-c776d537d1e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\containers">
+      <UniqueIdentifier>{f7ae86bb-9c5e-4545-84ba-ad13478ff57c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\faces">
+      <UniqueIdentifier>{cb4a45e3-ebca-4143-a0b1-e0ae9b2b4867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\floor">
+      <UniqueIdentifier>{8809f83b-489b-4292-a065-976090cfdc5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\toy_box">
+      <UniqueIdentifier>{0da99572-c933-449b-b4f6-4f79a7ea6893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\walls">
+      <UniqueIdentifier>{018b2b5c-08a1-4d94-822e-14fb1aad3262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\windows">
+      <UniqueIdentifier>{f697d016-2325-4f17-acad-cdd003d81a8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\PBR">
+      <UniqueIdentifier>{1bef3f2b-33b0-49e3-94b8-c20402112a1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\skyboxes">
+      <UniqueIdentifier>{7b838a84-0cdb-41db-9ff1-d32bb72d312c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\skyboxes\Newport_Loft">
+      <UniqueIdentifier>{36b58d8c-793e-49c2-8a59-d763804343a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\skyboxes\skybox">
+      <UniqueIdentifier>{ebe99126-48e9-4754-9574-54db8c33f9c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\PBR\gold-scuffed-Unreal-Engine">
+      <UniqueIdentifier>{d8a5e3b4-7de9-4b5d-aaf2-22a50bc57108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\PBR\grass1-Unreal-Engine2">
+      <UniqueIdentifier>{1c108ccd-1daa-43b2-8417-d96dd4b0e639}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\PBR\plasticpattern1-ue">
+      <UniqueIdentifier>{edf3b7d8-c49f-475e-81ed-c15a93e3f07b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\PBR\redbricks2b-Unreal-Engine">
+      <UniqueIdentifier>{5da0f558-52c4-43f5-9761-0c189d595e15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\PBR\rustediron1-alt2-Unreal-Engine">
+      <UniqueIdentifier>{e36d36a8-1661-475e-8ea4-45929673dc3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Debug">
+      <UniqueIdentifier>{ac98df22-0e6e-445c-b1a8-4f9970125422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Text">
+      <UniqueIdentifier>{4b803cdd-2fa9-4048-8b1c-1704e1971da6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Fonts">
+      <UniqueIdentifier>{e23ac41d-35d7-4a25-9e0a-8f3d1aae806e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Fonts\Arial">
+      <UniqueIdentifier>{8cba5814-597d-4aa5-b3bf-e9df4f70c098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Render_Text">
+      <UniqueIdentifier>{4b5ca9c4-9f2d-4a63-bd84-64dfd0435c0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Text">
+      <UniqueIdentifier>{d3c93a37-73d2-4248-9071-a31410752b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Deferred_Shading">
+      <UniqueIdentifier>{56746fbe-ab55-4e9c-95b3-74e5da47965d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Deferred_Shading">
+      <UniqueIdentifier>{b3e4f702-3d7f-4101-a8d6-e9362b271983}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Programs\Advanced\Advanced.cpp">
+      <Filter>Source Files\Programs\Advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Anti_Aliasing\Anti_aliasing.cpp">
+      <Filter>Source Files\Programs\Anti_Aliasing</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Blinn_Phong\Blinn_Phong.cpp">
+      <Filter>Source Files\Programs\Blinn_Phong</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Bloom\Bloom.cpp">
+      <Filter>Source Files\Programs\Bloom</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\FinalShadows\FinalShadows.cpp">
+      <Filter>Source Files\Programs\FinalShadows</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Geometry_Shader\Geometry_Shader.cpp">
+      <Filter>Source Files\Programs\Geometry_Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\HDR\HDR.cpp">
+      <Filter>Source Files\Programs\HDR</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Instancing\Instancing.cpp">
+      <Filter>Source Files\Programs\Instancing</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\SSAO\SSAO.cpp">
+      <Filter>Source Files\Programs\SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Shaders_variables\Shaders_variables.cpp">
+      <Filter>Source Files\Programs\Shaders_variables</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\PBR\PBR.cpp">
+      <Filter>Source Files\Programs\PBR</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\PBR\PBR_with_textures.cpp">
+      <Filter>Source Files\Programs\PBR</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Original\Original.cpp">
+      <Filter>Source Files\Programs\Original</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Normal_Parallax_Mapping\Normal_parallax_mapping.cpp">
+      <Filter>Source Files\Programs\Normal_Parallax_Mapping</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Source Files\Dependencies</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Render_Text\Render_Text.cpp">
+      <Filter>Source Files\Programs\Render_Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\PBR\PBR_with_Model.cpp">
+      <Filter>Source Files\Programs\PBR</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Deferred_Shading\Deferred_Shading.cpp">
+      <Filter>Source Files\Programs\Deferred_Shading</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nanosuit\nanosuit.mtl">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </None>
+    <None Include="nanosuit\nanosuit.blend">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </None>
+    <None Include="Models\nanosuit_reflection\nanosuit.mtl">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </None>
+    <None Include="Models\rock\rock.mtl">
+      <Filter>Source Files\Models\rock</Filter>
+    </None>
+    <None Include="Models\planet\planet.mtl">
+      <Filter>Source Files\Models\planet</Filter>
+    </None>
+    <None Include="Models\Cyborg\Cyborg.mtl">
+      <Filter>Source Files\Models\Cyborg</Filter>
+    </None>
+    <None Include="Models\Cerberus_by_Andrew_Maximov\Cerberus.tbscene">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </None>
+    <None Include="Models\Cerberus_by_Andrew_Maximov\Cerberus_LP.FBX">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </None>
+    <None Include="Shaders\Advanced\depth.fs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\depth.vs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\fbo_screen.fs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\fbo_screen.vs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\reflect_cubemap.fs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\reflect_cubemap.vs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\shader_single_color.fs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\shader_single_color.vs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\skybox.fs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Advanced\skybox.vs">
+      <Filter>Source Files\Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\Anti_Aliasing\anti_aliasing.fs">
+      <Filter>Source Files\Shaders\Anti_Aliasing</Filter>
+    </None>
+    <None Include="Shaders\Anti_Aliasing\anti_aliasing.vs">
+      <Filter>Source Files\Shaders\Anti_Aliasing</Filter>
+    </None>
+    <None Include="Shaders\Anti_Aliasing\simple_post.fs">
+      <Filter>Source Files\Shaders\Anti_Aliasing</Filter>
+    </None>
+    <None Include="Shaders\Anti_Aliasing\simple_post.vs">
+      <Filter>Source Files\Shaders\Anti_Aliasing</Filter>
+    </None>
+    <None Include="Shaders\Blinn_Phong\blinn_phong.fs">
+      <Filter>Source Files\Shaders\Blinn_Phong</Filter>
+    </None>
+    <None Include="Shaders\Blinn_Phong\blinn_phong.vs">
+      <Filter>Source Files\Shaders\Blinn_Phong</Filter>
+    </None>
+    <None Include="Shaders\Blinn_Phong\gamma.fs">
+      <Filter>Source Files\Shaders\Blinn_Phong</Filter>
+    </None>
+    <None Include="Shaders\Blinn_Phong\gamma.vs">
+      <Filter>Source Files\Shaders\Blinn_Phong</Filter>
+    </None>
+    <None Include="Shaders\Bloom\bloom.fs">
+      <Filter>Source Files\Shaders\Bloom</Filter>
+    </None>
+    <None Include="Shaders\Bloom\bloom.vs">
+      <Filter>Source Files\Shaders\Bloom</Filter>
+    </None>
+    <None Include="Shaders\Bloom\bloom_final.fs">
+      <Filter>Source Files\Shaders\Bloom</Filter>
+    </None>
+    <None Include="Shaders\Bloom\bloom_final.vs">
+      <Filter>Source Files\Shaders\Bloom</Filter>
+    </None>
+    <None Include="Shaders\Bloom\blur.fs">
+      <Filter>Source Files\Shaders\Bloom</Filter>
+    </None>
+    <None Include="Shaders\Bloom\blur.vs">
+      <Filter>Source Files\Shaders\Bloom</Filter>
+    </None>
+    <None Include="Shaders\Bloom\light_box.fs">
+      <Filter>Source Files\Shaders\Bloom</Filter>
+    </None>
+    <None Include="Shaders\Deffered_Shading\deferred_light_box.fs">
+      <Filter>Source Files\Shaders\Deferred_Shading</Filter>
+    </None>
+    <None Include="Shaders\Deffered_Shading\deferred_light_box.vs">
+      <Filter>Source Files\Shaders\Deferred_Shading</Filter>
+    </None>
+    <None Include="Shaders\Deffered_Shading\deferred_shading.fs">
+      <Filter>Source Files\Shaders\Deferred_Shading</Filter>
+    </None>
+    <None Include="Shaders\Deffered_Shading\deferred_shading.vs">
+      <Filter>Source Files\Shaders\Deferred_Shading</Filter>
+    </None>
+    <None Include="Shaders\Deffered_Shading\g_buffer.fs">
+      <Filter>Source Files\Shaders\Deferred_Shading</Filter>
+    </None>
+    <None Include="Shaders\Deffered_Shading\g_buffer.vs">
+      <Filter>Source Files\Shaders\Deferred_Shading</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\debug_quad.fs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\debug_quad.vs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\depth_shadow.fs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\depth_shadow.vs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\final_shadows.fs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\final_shadows.vs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\point_depth_shadow.fs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\point_depth_shadow.gs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\point_depth_shadow.vs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\shadow_cube.fs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\shadow_cube.vs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\shadow_mapping.fs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\FinalShadows\shadow_mapping.vs">
+      <Filter>Source Files\Shaders\FinalShadows</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\explode_model.fs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\explode_model.gs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\explode_model.vs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\geometry.fs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\geometry.gs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\geometry.vs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\normal_model.fs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\normal_model.vs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\visualize_normals.fs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\visualize_normals.gs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\Geometry_Shader\visualize_normals.vs">
+      <Filter>Source Files\Shaders\Geometry_Shader</Filter>
+    </None>
+    <None Include="Shaders\HDR\hdr.fs">
+      <Filter>Source Files\Shaders\HDR</Filter>
+    </None>
+    <None Include="Shaders\HDR\hdr.vs">
+      <Filter>Source Files\Shaders\HDR</Filter>
+    </None>
+    <None Include="Shaders\HDR\hdr_lights.fs">
+      <Filter>Source Files\Shaders\HDR</Filter>
+    </None>
+    <None Include="Shaders\HDR\hdr_lights.vs">
+      <Filter>Source Files\Shaders\HDR</Filter>
+    </None>
+    <None Include="Shaders\Instancing\instancing_asteroids.vs">
+      <Filter>Source Files\Shaders\Instancing</Filter>
+    </None>
+    <None Include="Shaders\Instancing\instancing_planets.fs">
+      <Filter>Source Files\Shaders\Instancing</Filter>
+    </None>
+    <None Include="Shaders\Instancing\instancing_planets.vs">
+      <Filter>Source Files\Shaders\Instancing</Filter>
+    </None>
+    <None Include="Shaders\SSAO\ssao.fs">
+      <Filter>Source Files\Shaders\SSAO</Filter>
+    </None>
+    <None Include="Shaders\SSAO\ssao.vs">
+      <Filter>Source Files\Shaders\SSAO</Filter>
+    </None>
+    <None Include="Shaders\SSAO\ssao_blur.fs">
+      <Filter>Source Files\Shaders\SSAO</Filter>
+    </None>
+    <None Include="Shaders\SSAO\ssao_geometry.fs">
+      <Filter>Source Files\Shaders\SSAO</Filter>
+    </None>
+    <None Include="Shaders\SSAO\ssao_geometry.vs">
+      <Filter>Source Files\Shaders\SSAO</Filter>
+    </None>
+    <None Include="Shaders\SSAO\ssao_lighting.fs">
+      <Filter>Source Files\Shaders\SSAO</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\blue.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\fbo_screen.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\fbo_screen.vs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\green.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\pointsize.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\pointsize.vs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\red.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\reflect_cubemap.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\reflect_cubemap.vs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\shader_single_color.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\shader_single_color.vs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\skybox.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\skybox.vs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Shaders_variables\yellow.fs">
+      <Filter>Source Files\Shaders\Shaders_variables</Filter>
+    </None>
+    <None Include="Shaders\Original\light_maps.vs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Original\model.fs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Original\reflect_cubemap.fs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Original\reflect_cubemap.vs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Original\refract_cubemap.fs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Original\simple_light_shader.fs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Original\simple_light_shader.vs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Original\skybox.fs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Original\skybox.vs">
+      <Filter>Source Files\Shaders\Original</Filter>
+    </None>
+    <None Include="Shaders\Normal_Parallax_Mapping\normal_parallax_mapping.fs">
+      <Filter>Source Files\Shaders\Normal_Parallax_Mapping</Filter>
+    </None>
+    <None Include="Shaders\Normal_Parallax_Mapping\normal_parallax_mapping.vs">
+      <Filter>Source Files\Shaders\Normal_Parallax_Mapping</Filter>
+    </None>
+    <None Include="Shaders\PBR\background.fs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\background.vs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\brdf.fs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\brdf.vs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\cubemap.vs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\equirectangular_to_cubemap.fs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\irradiance_convolution.fs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\pbr.fs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\pbr.vs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\pbr_textures.fs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\pbr_textures.vs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\PBR\prefilter.fs">
+      <Filter>Source Files\Shaders\PBR</Filter>
+    </None>
+    <None Include="Shaders\Text\text.fs">
+      <Filter>Source Files\Shaders\Text</Filter>
+    </None>
+    <None Include="Shaders\Text\text.vs">
+      <Filter>Source Files\Shaders\Text</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Camera\Camera.h">
+      <Filter>Source Files\Classes\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\FrameBuffer\FrameBuffer.h">
+      <Filter>Source Files\Classes\FrameBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\FrameBuffer\FrameBufferManager.h">
+      <Filter>Source Files\Classes\FrameBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Light\Directional_Light.h">
+      <Filter>Source Files\Classes\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Light\Light.h">
+      <Filter>Source Files\Classes\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Light\LightManager.h">
+      <Filter>Source Files\Classes\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Light\Point_Light.h">
+      <Filter>Source Files\Classes\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Light\Spotlight.h">
+      <Filter>Source Files\Classes\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Model\Mesh.h">
+      <Filter>Source Files\Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Model\Model.h">
+      <Filter>Source Files\Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Model\ModelManager.h">
+      <Filter>Source Files\Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Shader\Shader.h">
+      <Filter>Source Files\Classes\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Shader\ShaderManager.h">
+      <Filter>Source Files\Classes\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Texture\TextureLoader.h">
+      <Filter>Source Files\Classes\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Texture\TextureManager.h">
+      <Filter>Source Files\Classes\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Vertex\VertexBuffers.h">
+      <Filter>Source Files\Classes\Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Vertex\VertexManager.h">
+      <Filter>Source Files\Classes\Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Engine.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\FrameBuffers.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Libraries.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Lights.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Models.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Shaders.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Textures.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Vertices.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Random data\multiple_vertices.h">
+      <Filter>Source Files\Random data</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\UBO\UboManager.h">
+      <Filter>Source Files\Classes\UBO</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\UBO\Ubo.h">
+      <Filter>Source Files\Classes\UBO</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Ubos.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Camera\CameraManager.h">
+      <Filter>Source Files\Classes\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Cameras.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Advanced\Advanced.h">
+      <Filter>Source Files\Programs\Advanced</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Anti_Aliasing\Anti_aliasing.h">
+      <Filter>Source Files\Programs\Anti_Aliasing</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Blinn_Phong\Blinn_Phong.h">
+      <Filter>Source Files\Programs\Blinn_Phong</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Bloom\Bloom.h">
+      <Filter>Source Files\Programs\Bloom</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\FinalShadows\FinalShadows.h">
+      <Filter>Source Files\Programs\FinalShadows</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Geometry_Shader\Geometry_Shader.h">
+      <Filter>Source Files\Programs\Geometry_Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\HDR\HDR.h">
+      <Filter>Source Files\Programs\HDR</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Instancing\Instancing.h">
+      <Filter>Source Files\Programs\Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\SSAO\SSAO.h">
+      <Filter>Source Files\Programs\SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Shaders_variables\Shaders_variables.h">
+      <Filter>Source Files\Programs\Shaders_variables</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\PBR\PBR.h">
+      <Filter>Source Files\Programs\PBR</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Original\Original.h">
+      <Filter>Source Files\Programs\Original</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Normal_Parallax_Mapping\Normal_parallax_mapping.h">
+      <Filter>Source Files\Programs\Normal_Parallax_Mapping</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\stb_image.h">
+      <Filter>Source Files\Dependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Debug\Debug.h">
+      <Filter>Source Files\Classes\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Render_Text\Render_Text.h">
+      <Filter>Source Files\Programs\Render_Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Text\TextRenderer.h">
+      <Filter>Source Files\Classes\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Text\TextRendererManager.h">
+      <Filter>Source Files\Classes\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\TextRenderers.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Deferred_Shading\Deferred_Shading.h">
+      <Filter>Source Files\Programs\Deferred_Shading</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="nanosuit\arm_dif.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\arm_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\arm_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\body_dif.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\body_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\body_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\glass_ddn.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\glass_dif.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\hand_dif.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\hand_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\hand_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\helmet_diff.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\helmet_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\helmet_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\leg_dif.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\leg_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="nanosuit\leg_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\arm_dif.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\arm_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\arm_showroom_refl.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\arm_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\body_dif.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\body_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\body_showroom_refl.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\body_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\glass_ddn.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\glass_dif.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\glass_refl.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\hand_dif.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\hand_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\hand_showroom_refl.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\hand_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\helmet_diff.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\helmet_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\helmet_showroom_refl.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\helmet_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\leg_dif.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\leg_showroom_ddn.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\leg_showroom_refl.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\nanosuit_reflection\leg_showroom_spec.png">
+      <Filter>Source Files\Models\nanosuit_reflection</Filter>
+    </Image>
+    <Image Include="Models\rock\Rock-Texture-Surface.jpg">
+      <Filter>Source Files\Models\rock</Filter>
+    </Image>
+    <Image Include="Models\planet\planet_Quom1200.png">
+      <Filter>Source Files\Models\planet</Filter>
+    </Image>
+    <Image Include="Models\Cyborg\Cyborg_D.tga">
+      <Filter>Source Files\Models\Cyborg</Filter>
+    </Image>
+    <Image Include="Models\Cyborg\Cyborg_N.tga">
+      <Filter>Source Files\Models\Cyborg</Filter>
+    </Image>
+    <Image Include="Models\Cyborg\Cyborg_S.tga">
+      <Filter>Source Files\Models\Cyborg</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_A.tga">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_M.tga">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_N.tga">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_R.tga">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Raw\Cerberus_AO.tga">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_A.png">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_AO.png">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_M.png">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_N.png">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Models\Cerberus_by_Andrew_Maximov\Textures\Cerberus_R.png">
+      <Filter>Source Files\Models\Cerberus_by_Andrew_Maximov</Filter>
+    </Image>
+    <Image Include="Images\containers\container.jpg">
+      <Filter>Source Files\Images\containers</Filter>
+    </Image>
+    <Image Include="Images\containers\container2.png">
+      <Filter>Source Files\Images\containers</Filter>
+    </Image>
+    <Image Include="Images\containers\container2_specular.png">
+      <Filter>Source Files\Images\containers</Filter>
+    </Image>
+    <Image Include="Images\containers\lighting_maps_specular_color.png">
+      <Filter>Source Files\Images\containers</Filter>
+    </Image>
+    <Image Include="Images\containers\matrix.jpg">
+      <Filter>Source Files\Images\containers</Filter>
+    </Image>
+    <Image Include="Images\faces\awesomeface.png">
+      <Filter>Source Files\Images\faces</Filter>
+    </Image>
+    <Image Include="Images\floor\Dark-Wood-Texture.jpg">
+      <Filter>Source Files\Images\floor</Filter>
+    </Image>
+    <Image Include="Images\floor\example_Wood.png">
+      <Filter>Source Files\Images\floor</Filter>
+    </Image>
+    <Image Include="Images\floor\floor.jpg">
+      <Filter>Source Files\Images\floor</Filter>
+    </Image>
+    <Image Include="Images\floor\grass.png">
+      <Filter>Source Files\Images\floor</Filter>
+    </Image>
+    <Image Include="Images\floor\vector-wood-texture.jpg">
+      <Filter>Source Files\Images\floor</Filter>
+    </Image>
+    <Image Include="Images\floor\wood.png">
+      <Filter>Source Files\Images\floor</Filter>
+    </Image>
+    <Image Include="Images\floor\wood-textures_00311175.png">
+      <Filter>Source Files\Images\floor</Filter>
+    </Image>
+    <Image Include="Images\toy_box\toy_box_disp.png">
+      <Filter>Source Files\Images\toy_box</Filter>
+    </Image>
+    <Image Include="Images\toy_box\toy_box_normal.png">
+      <Filter>Source Files\Images\toy_box</Filter>
+    </Image>
+    <Image Include="Images\walls\bricks2.jpg">
+      <Filter>Source Files\Images\walls</Filter>
+    </Image>
+    <Image Include="Images\walls\bricks2_disp.jpg">
+      <Filter>Source Files\Images\walls</Filter>
+    </Image>
+    <Image Include="Images\walls\bricks2_normal.jpg">
+      <Filter>Source Files\Images\walls</Filter>
+    </Image>
+    <Image Include="Images\walls\brickwall.jpg">
+      <Filter>Source Files\Images\walls</Filter>
+    </Image>
+    <Image Include="Images\walls\brickwall_normal.jpg">
+      <Filter>Source Files\Images\walls</Filter>
+    </Image>
+    <Image Include="Images\walls\wall.jpg">
+      <Filter>Source Files\Images\walls</Filter>
+    </Image>
+    <Image Include="Images\windows\blending_transparent_window.png">
+      <Filter>Source Files\Images\windows</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\skybox\back.jpg">
+      <Filter>Source Files\Images\skyboxes\skybox</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\skybox\bottom.jpg">
+      <Filter>Source Files\Images\skyboxes\skybox</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\skybox\front.jpg">
+      <Filter>Source Files\Images\skyboxes\skybox</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\skybox\left.jpg">
+      <Filter>Source Files\Images\skyboxes\skybox</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\skybox\right.jpg">
+      <Filter>Source Files\Images\skyboxes\skybox</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\skybox\top.jpg">
+      <Filter>Source Files\Images\skyboxes\skybox</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\Newport_Loft\Newport_Loft_8k.jpg">
+      <Filter>Source Files\Images\skyboxes\Newport_Loft</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\Newport_Loft\Newport_Loft_preview.jpg">
+      <Filter>Source Files\Images\skyboxes\Newport_Loft</Filter>
+    </Image>
+    <Image Include="Images\skyboxes\Newport_Loft\Newport_Loft_Thumb.jpg">
+      <Filter>Source Files\Images\skyboxes\Newport_Loft</Filter>
+    </Image>
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_basecolor.png">
+      <Filter>Source Files\Images\PBR\gold-scuffed-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_basecolor-boosted.png">
+      <Filter>Source Files\Images\PBR\gold-scuffed-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_metallic.png">
+      <Filter>Source Files\Images\PBR\gold-scuffed-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_normal.png">
+      <Filter>Source Files\Images\PBR\gold-scuffed-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\gold-scuffed-Unreal-Engine\gold-scuffed_roughness.png">
+      <Filter>Source Files\Images\PBR\gold-scuffed-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-albedo3.png">
+      <Filter>Source Files\Images\PBR\grass1-Unreal-Engine2</Filter>
+    </Image>
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-ao.png">
+      <Filter>Source Files\Images\PBR\grass1-Unreal-Engine2</Filter>
+    </Image>
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-height.png">
+      <Filter>Source Files\Images\PBR\grass1-Unreal-Engine2</Filter>
+    </Image>
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-normal2.png">
+      <Filter>Source Files\Images\PBR\grass1-Unreal-Engine2</Filter>
+    </Image>
+    <Image Include="Images\PBR\grass1-Unreal-Engine2\grass1-rough.png">
+      <Filter>Source Files\Images\PBR\grass1-Unreal-Engine2</Filter>
+    </Image>
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-albedo.png">
+      <Filter>Source Files\Images\PBR\rustediron1-alt2-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-ao.png">
+      <Filter>Source Files\Images\PBR\rustediron1-alt2-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-metalness.png">
+      <Filter>Source Files\Images\PBR\rustediron1-alt2-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-normal2b.png">
+      <Filter>Source Files\Images\PBR\rustediron1-alt2-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\plasticpattern1-ue\plasticpattern1-roughness2.png">
+      <Filter>Source Files\Images\PBR\rustediron1-alt2-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-albedo.png">
+      <Filter>Source Files\Images\PBR\redbricks2b-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-ao.png">
+      <Filter>Source Files\Images\PBR\redbricks2b-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-height4b.png">
+      <Filter>Source Files\Images\PBR\redbricks2b-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-metalness.png">
+      <Filter>Source Files\Images\PBR\redbricks2b-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-normal.png">
+      <Filter>Source Files\Images\PBR\redbricks2b-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\redbricks2b-Unreal-Engine\redbricks2b-rough.png">
+      <Filter>Source Files\Images\PBR\redbricks2b-Unreal-Engine</Filter>
+    </Image>
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_ao.png">
+      <Filter>Source Files\Images\PBR\plasticpattern1-ue</Filter>
+    </Image>
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_basecolor.png">
+      <Filter>Source Files\Images\PBR\plasticpattern1-ue</Filter>
+    </Image>
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_metallic.png">
+      <Filter>Source Files\Images\PBR\plasticpattern1-ue</Filter>
+    </Image>
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_normal.png">
+      <Filter>Source Files\Images\PBR\plasticpattern1-ue</Filter>
+    </Image>
+    <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_roughness.png">
+      <Filter>Source Files\Images\PBR\plasticpattern1-ue</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Fonts\Arial\arial.ttf">
+      <Filter>Source Files\Fonts\Arial</Filter>
+    </Font>
+  </ItemGroup>
+</Project>
