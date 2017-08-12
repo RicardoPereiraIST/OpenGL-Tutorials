@@ -1,8 +1,8 @@
-### Bloom
+# Bloom
 
 This is a scene implementing Bloom (https://learnopengl.com/#!Advanced-Lighting/Bloom).
 
-##### Commands
+### Commands
 
 >* Press "b" to set bloom.
 >* Press "q" to decrement exposure.

@@ -1,8 +1,8 @@
-### Blinn-Phong
+# Blinn-Phong
 
 This is a scene implementing Blinn-Phong (https://learnopengl.com/#!Advanced-Lighting/Advanced-Lighting).
 
-##### Commands
+### Commands
 
 >* Press "b" to change from Phong to Blinn-Phong.
 >* Press "z" to set point light.

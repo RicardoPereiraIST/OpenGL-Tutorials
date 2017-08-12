@@ -1,4 +1,4 @@
-### OpenGL Tutorials
+# OpenGL Tutorials
 
 This is my attempt at following Joey de Vries OpenGL tutorials (https://learnopengl.com/).
 
@@ -15,7 +15,7 @@ There are multiple dependencies:
 All the resources are either from Google or linked in Joey's tutorial.
 
 
-##### Problems:
+### Problems:
 
 > Model with reflection maps (cubemap tutorial/Original.cpp) isn't working properly.
 >
@@ -25,7 +25,7 @@ All the resources are either from Google or linked in Joey's tutorial.
 >
 > PBR textures aren't being properly applied to a model (PBR_with_Model.cpp).
 
-##### Incoming:
+#### Incoming:
 
 > Finish all tutorials (2D Game).
 >

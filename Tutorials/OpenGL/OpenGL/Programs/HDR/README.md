@@ -1,8 +1,8 @@
-### HDR
+# HDR
 
 This is a scene implementing HDR (https://learnopengl.com/#!Advanced-Lighting/HDR).
 
-##### Commands
+### Commands
 
 >* Press "t" to set hdr.
 >* Press "q" to decrement exposure.
