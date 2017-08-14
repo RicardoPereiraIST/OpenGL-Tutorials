@@ -1,122 +1,31 @@
 #include "Blinn_Phong.h"
 
 int main() {
-	initializeGLFW();
-	createWindow();
-	initializeGLAD();
-	initializeDebug();
-
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	glViewport(0, 0, width, height);
-	setCallbacks();
-	
-	//Camera
-	Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
-	CameraManager::instance()->add("camera", camera);
 
 	setShader();
 	setVertices();
 	setTextures();
 	setLights();
-
 	setFrameBuffers();
 
 	gameLoop();
-	glfwTerminate();
-
-	glUseProgram(0);
-	glfwDestroyWindow(window);
 	return 0;
-}
-
-void initializeGLFW() {
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE); // comment this line in a release build!
-}
-
-int initializeGLAD() {
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-		std::cout << "Failed to initialize GLAD" << std::endl;
-		return -1;
-	}
-	return 0;
-}
-
-void initializeDebug() {
-	GLint flags; glGetIntegerv(GL_CONTEXT_FLAGS, &flags);
-	if (flags & GL_CONTEXT_FLAG_DEBUG_BIT)
-	{
-		glEnable(GL_DEBUG_OUTPUT);
-		glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS); // makes sure errors are displayed synchronously
-		glDebugMessageCallback(glDebugOutput, nullptr);
-		glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
-	}
-}
-
-void setCallbacks() {
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-	glfwSetCursorPosCallback(window, mouse_callback);
-	glfwSetScrollCallback(window, scroll_callback);
-}
-
-int createWindow() {
-	window = glfwCreateWindow(width, height, "LearnOpenGL", NULL, NULL);
-
-	if (!window) {
-		std::cout << "Failed to create GLFW window" << std::endl;
-		glfwTerminate();
-		return -1;
-	}
-
-	glfwMakeContextCurrent(window);
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	return 0;
-}
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-	glViewport(0, 0, width, height);
-}
-
-void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
-
-	if (firstMouse)
-	{
-		lastX = xpos;
-		lastY = ypos;
-		firstMouse = false;
-	}
-
-	float xoffset = xpos - lastX;
-	float yoffset = lastY - ypos;
-	lastX = xpos;
-	lastY = ypos;
-
-	CameraManager::instance()->get("camera")->ProcessMouseMovement(xoffset, yoffset);
-}
-
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-	CameraManager::instance()->get("camera")->ProcessMouseScroll(yoffset);
 }
 
 void gameLoop() {
-	while (!glfwWindowShouldClose(window)) {
+	while (!glfwWindowShouldClose(init.window)) {
 		float currentFrame = glfwGetTime();
-		deltaTime = currentFrame - lastFrame;
-		lastFrame = currentFrame;
+		init.deltaTime = currentFrame - init.lastFrame;
+		init.lastFrame = currentFrame;
 
-		processInput(window);
+		processInput(init.window);
 
 		updateSpotLight();
 		drawObjects();
 
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(init.window);
 		glfwPollEvents();
 	}
 }
@@ -127,19 +36,19 @@ void processInput(GLFWwindow* window) {
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-		CameraManager::instance()->get("camera")->ProcessKeyboard(FORWARD, deltaTime);
+		CameraManager::instance()->get("camera")->ProcessKeyboard(FORWARD, init.deltaTime);
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-		CameraManager::instance()->get("camera")->ProcessKeyboard(BACKWARD, deltaTime);
+		CameraManager::instance()->get("camera")->ProcessKeyboard(BACKWARD, init.deltaTime);
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
-		CameraManager::instance()->get("camera")->ProcessKeyboard(LEFT, deltaTime);
+		CameraManager::instance()->get("camera")->ProcessKeyboard(LEFT, init.deltaTime);
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
-		CameraManager::instance()->get("camera")->ProcessKeyboard(RIGHT, deltaTime);
+		CameraManager::instance()->get("camera")->ProcessKeyboard(RIGHT, init.deltaTime);
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS && !blinnKeyPressed)
@@ -233,7 +142,7 @@ void setTextures() {
 	TextureManager::instance()->add("plane_gamma", texture2);
 
 	TextureLoader *texture4 = new TextureLoader();
-	texture4->loadFrame(width, height);
+	texture4->loadFrame(WIDTH, HEIGHT);
 	TextureManager::instance()->add("screen", texture4);
 }
 
@@ -258,7 +167,7 @@ void drawObjects() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 	ShaderManager::instance()->get("original")->use();
-	glm::mat4 projection = glm::perspective(CameraManager::instance()->get("camera")->Zoom, (float)width / (float)height, 0.1f, 1000.0f);
+	glm::mat4 projection = glm::perspective(CameraManager::instance()->get("camera")->Zoom, (float)WIDTH / (float)HEIGHT, 0.1f, 1000.0f);
 	glm::mat4 view = CameraManager::instance()->get("camera")->GetViewMatrix();
 	ShaderManager::instance()->get("original")->setUniform("projection", projection);
 	ShaderManager::instance()->get("original")->setUniform("view", CameraManager::instance()->get("camera")->GetViewMatrix());
@@ -308,6 +217,6 @@ void updateSpotLight() {
 }
 
 void setFrameBuffers() {
-	FrameBuffer * fb1 = new FrameBuffer("screen", width, height);
+	FrameBuffer * fb1 = new FrameBuffer("screen", WIDTH, HEIGHT);
 	FrameBufferManager::instance()->add("screen", fb1);
 }

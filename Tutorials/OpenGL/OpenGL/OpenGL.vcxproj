@@ -99,6 +99,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalUsingDirectories>$(SolutionDir)\..\..\Dependencies\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -113,6 +114,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalUsingDirectories>$(SolutionDir)\..\..\Dependencies\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -129,6 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalUsingDirectories>$(SolutionDir)\..\..\Dependencies\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -147,6 +150,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalUsingDirectories>$(SolutionDir)\..\..\Dependencies\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -157,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Classes\Init\Init.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Programs\Advanced\Advanced.cpp" />
     <ClCompile Include="Programs\Anti_Aliasing\Anti_aliasing.cpp" />
@@ -299,6 +304,7 @@
     <ClInclude Include="Classes\Debug\Debug.h" />
     <ClInclude Include="Classes\FrameBuffer\FrameBuffer.h" />
     <ClInclude Include="Classes\FrameBuffer\FrameBufferManager.h" />
+    <ClInclude Include="Classes\Init\Init.h" />
     <ClInclude Include="Classes\Light\Directional_Light.h" />
     <ClInclude Include="Classes\Light\Light.h" />
     <ClInclude Include="Classes\Light\LightManager.h" />

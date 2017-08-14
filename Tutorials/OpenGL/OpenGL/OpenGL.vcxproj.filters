@@ -226,6 +226,9 @@
     <Filter Include="Source Files\Shaders\Deferred_Shading">
       <UniqueIdentifier>{b3e4f702-3d7f-4101-a8d6-e9362b271983}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes\Init">
+      <UniqueIdentifier>{23e369b2-9ff2-40e8-9c9d-d225cf628138}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Programs\Advanced\Advanced.cpp">
@@ -281,6 +284,9 @@
     </ClCompile>
     <ClCompile Include="Programs\Deferred_Shading\Deferred_Shading.cpp">
       <Filter>Source Files\Programs\Deferred_Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Init\Init.cpp">
+      <Filter>Source Files\Classes\Init</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -786,6 +792,9 @@
     </ClInclude>
     <ClInclude Include="Programs\Deferred_Shading\Deferred_Shading.h">
       <Filter>Source Files\Programs\Deferred_Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Init\Init.h">
+      <Filter>Source Files\Classes\Init</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

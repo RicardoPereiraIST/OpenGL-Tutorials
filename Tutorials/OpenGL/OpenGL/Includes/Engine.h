@@ -16,7 +16,7 @@
 
 //OTHERS
 #include "..\Random data\multiple_vertices.h"
-#include "..\Classes\Debug\Debug.h"
+#include "..\Classes\Init\Init.h"
 #include <vld.h>
 
 #endif
