@@ -29,8 +29,7 @@ class TextureLoader {
 		void loadTextures(std::string filename, bool flip = false, GLenum wrap = GL_REPEAT, bool gamma = false, GLenum min_mag = GL_LINEAR, GLenum map = GL_LINEAR_MIPMAP_LINEAR) {
 			int texW, texH, twxNrChannels;
 
-			if (flip)
-				stbi_set_flip_vertically_on_load(true);
+			stbi_set_flip_vertically_on_load(flip);
 
 			unsigned char *data = stbi_load(filename.c_str(), &texW, &texH, &twxNrChannels, 0);
 

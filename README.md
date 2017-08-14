@@ -22,8 +22,6 @@ All the resources are either from Google or linked in Joey's tutorial.
 > Applying gamma correction within a framebuffer (Blinn-Phong.cpp) is causing some artifacts.
 >
 > I'm not entirely sure the shadows in FinalShadows.cpp are correct.
->
-> PBR textures aren't being properly applied to a model (PBR_with_Model.cpp).
 
 ### Incoming:
 

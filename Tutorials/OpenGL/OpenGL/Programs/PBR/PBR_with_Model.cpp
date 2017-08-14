@@ -145,7 +145,7 @@ void processInput(GLFWwindow* window) {
 }
 
 void setShader() {
-	Shader* pbrShader = new Shader("Shaders/PBR/pbr.vs", "Shaders/PBR/pbr_textures.fs");
+	Shader* pbrShader = new Shader("Shaders/PBR/pbr_textures.vs", "Shaders/PBR/pbr_textures.fs");
 	ShaderManager::instance()->add("pbrShader", pbrShader);
 
 	Shader* equirectangularToCubemapShader = new Shader("Shaders/PBR/cubemap.vs", "Shaders/PBR/equirectangular_to_cubemap.fs");
