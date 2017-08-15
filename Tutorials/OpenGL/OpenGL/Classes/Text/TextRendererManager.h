@@ -1,10 +1,10 @@
 #pragma once
 
-#include <unordered_map>
-#include "TextRenderer.h"
-
 #ifndef TEXTRENDERERMANAGER_H
 #define TEXTRENDERERMANAGER_H
+
+#include <unordered_map>
+#include "TextRenderer.h"
 
 class TextRendererManager {
 private:

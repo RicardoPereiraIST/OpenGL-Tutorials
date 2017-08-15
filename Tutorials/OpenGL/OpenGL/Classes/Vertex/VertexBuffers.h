@@ -1,14 +1,12 @@
 #pragma once
 
-#include <glad\glad.h>
-#include <glfw3.h>
+#ifndef VERTEX_BUFFERS_H
+#define VERTEX_BUFFERS_H
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include "..\Texture\TextureManager.h"
-
-#ifndef VERTEX_BUFFERS_H
-#define VERTEX_BUFFERS_H
 
 class VertexBuffersException : public std::runtime_error {
 public:
@@ -60,7 +58,7 @@ class VertexBuffers {
 			int attrib = 0;
 
 			// position attribute
-			glVertexAttribPointer(0, sizeof_vector, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)0);
+			glVertexAttribPointer(attrib, sizeof_vector, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)0);
 			glEnableVertexAttribArray(attrib++);
 			// color attribute
 			if (colors) {
@@ -91,6 +89,30 @@ class VertexBuffers {
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 			glEnableVertexAttribArray(0);
+		}
+
+		void createSprite() {
+			glGenVertexArrays(1, &vao);
+			glGenBuffers(1, &vbo);
+
+			glBindBuffer(GL_ARRAY_BUFFER, vbo);
+			glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
+
+			glBindVertexArray(vao);
+			
+			int c = 0, t = 0, ta = 0, bit = 0;
+			if (colors) c = 3;
+			if (texcoords) t = 2;
+			if (tangents) ta = 3;
+			if (bitangents) bit = 3;
+
+			int attrib = 0;
+
+			glEnableVertexAttribArray(attrib);
+			glVertexAttribPointer(attrib, 4, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)0);
+
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			glBindVertexArray(0);
 		}
 
 		//Function to create spheres
@@ -185,13 +207,16 @@ class VertexBuffers {
 	public:
 		VertexBuffers(){}
 
-		VertexBuffers(std::vector<float> v, bool c, bool t, int size_vector = 3) {
+		VertexBuffers(std::vector<float> v, bool c, bool t, int size_vector = 3, bool sprite = false) {
 			vertices = v;
 			colors = c;
 			texcoords = t;
 			sizeof_vector = size_vector;
 			num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0));
-			create();
+			if (sprite)
+				createSprite();
+			else
+				create();
 		}
 
 		VertexBuffers(std::vector<float> v, bool c, bool t, bool ta, bool bit, int size_vector = 3) {

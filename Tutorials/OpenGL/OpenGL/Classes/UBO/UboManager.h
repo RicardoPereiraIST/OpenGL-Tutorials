@@ -1,10 +1,10 @@
 #pragma once
 
-#include <unordered_map>
-#include "Ubo.h"
-
 #ifndef UBOMANAGER_H
 #define UBOMANAGER_H
+
+#include <unordered_map>
+#include "Ubo.h"
 
 class UboManager {
 private:

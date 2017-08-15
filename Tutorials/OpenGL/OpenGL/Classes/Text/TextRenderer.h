@@ -1,14 +1,14 @@
 #pragma once
 
-#include "..\..\Includes\Libraries.h"
+#ifndef TEXTRENDERER_H
+#define TEXTRENDERER_H
+
+#include "..\..\Includes\FreeType.h"
 #include <iostream>
 #include <map>
 #include "..\..\Includes\Vertices.h"
 #include "..\..\Includes\Textures.h"
 #include "..\Shader\ShaderManager.h"
-
-#ifndef TEXTRENDERER_H
-#define TEXTRENDERER_H
 
 struct Character {
 	std::string textureName;

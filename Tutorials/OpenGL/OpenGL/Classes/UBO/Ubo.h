@@ -1,10 +1,9 @@
 #pragma once
 
-#include "..\..\Includes\Libraries.h"
-#include <iostream>
-
 #ifndef UBO_H
 #define UBO_H
+
+#include <iostream>
 
 class UboException : public std::runtime_error {
 public:

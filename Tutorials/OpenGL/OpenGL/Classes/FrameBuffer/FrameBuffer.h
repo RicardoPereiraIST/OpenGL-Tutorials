@@ -1,12 +1,10 @@
 #pragma once
 
-#include <glad\glad.h>
-#include <glfw3.h>
-#include <iostream>
-#include "..\Texture\TextureManager.h"
-
 #ifndef FRAMEBUFFER_H
 #define FRAMEBUFFER_H
+
+#include <glad\glad.h>
+#include "..\Texture\TextureManager.h"
 
 class FrameBufferException : public std::runtime_error {
 public:

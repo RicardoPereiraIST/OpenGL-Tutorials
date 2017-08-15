@@ -1,10 +1,10 @@
 #pragma once
 
-#include <unordered_map>
-#include "TextureLoader.h"
-
 #ifndef TEXTUREMANAGER_H
 #define TEXTUREMANAGER_H
+
+#include <unordered_map>
+#include "TextureLoader.h"
 
 class TextureManager {
 private:

@@ -13,6 +13,7 @@
 #include "Ubos.h"
 #include "Cameras.h"
 #include "TextRenderers.h"
+#include "SpriteRenderers.h"
 
 //OTHERS
 #include "..\Random data\multiple_vertices.h"

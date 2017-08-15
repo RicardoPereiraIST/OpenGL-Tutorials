@@ -1,16 +1,15 @@
 #pragma once
 
+#ifndef SHADER_H
+#define SHADER_H
+
+#include <glad\glad.h>
 #include <iostream>
-#include <unordered_map>
 #include <fstream>
 #include <sstream>
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
 #include <glm\gtc\type_ptr.hpp>
-#include <glfw3.h>
-
-#ifndef SHADER_H
-#define SHADER_H
 
 namespace ShaderType {
 	enum Type {

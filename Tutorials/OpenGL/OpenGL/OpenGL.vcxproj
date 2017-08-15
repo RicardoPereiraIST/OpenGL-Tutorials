@@ -162,11 +162,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Classes\Init\Init.cpp" />
+    <ClCompile Include="Classes\Texture\TextureLoader.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Programs\Advanced\Advanced.cpp" />
     <ClCompile Include="Programs\Anti_Aliasing\Anti_aliasing.cpp" />
     <ClCompile Include="Programs\Blinn_Phong\Blinn_Phong.cpp" />
     <ClCompile Include="Programs\Bloom\Bloom.cpp" />
+    <ClCompile Include="Programs\Breakout\Breakout.cpp" />
+    <ClCompile Include="Programs\Breakout\BreakoutManager\BreakoutManager.cpp" />
     <ClCompile Include="Programs\Deferred_Shading\Deferred_Shading.cpp" />
     <ClCompile Include="Programs\FinalShadows\FinalShadows.cpp" />
     <ClCompile Include="Programs\Geometry_Shader\Geometry_Shader.cpp" />
@@ -180,6 +183,7 @@
     <ClCompile Include="Programs\Render_Text\Render_Text.cpp" />
     <ClCompile Include="Programs\Shaders_variables\Shaders_variables.cpp" />
     <ClCompile Include="Programs\SSAO\SSAO.cpp" />
+    <ClCompile Include="Random data\multiple_vertices.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Models\Cerberus_by_Andrew_Maximov\Cerberus.tbscene" />
@@ -215,6 +219,8 @@
     <None Include="Shaders\Bloom\blur.fs" />
     <None Include="Shaders\Bloom\blur.vs" />
     <None Include="Shaders\Bloom\light_box.fs" />
+    <None Include="Shaders\Breakout\sprite.fs" />
+    <None Include="Shaders\Breakout\sprite.vs" />
     <None Include="Shaders\Deffered_Shading\deferred_light_box.fs" />
     <None Include="Shaders\Deffered_Shading\deferred_light_box.vs" />
     <None Include="Shaders\Deffered_Shading\deferred_shading.fs" />
@@ -315,6 +321,8 @@
     <ClInclude Include="Classes\Model\ModelManager.h" />
     <ClInclude Include="Classes\Shader\Shader.h" />
     <ClInclude Include="Classes\Shader\ShaderManager.h" />
+    <ClInclude Include="Classes\SpriteRenderer\SpriteRenderer.h" />
+    <ClInclude Include="Classes\SpriteRenderer\SpriteRendererManager.h" />
     <ClInclude Include="Classes\Texture\TextureLoader.h" />
     <ClInclude Include="Classes\Texture\TextureManager.h" />
     <ClInclude Include="Classes\Text\TextRenderer.h" />
@@ -327,10 +335,12 @@
     <ClInclude Include="Includes\Cameras.h" />
     <ClInclude Include="Includes\Engine.h" />
     <ClInclude Include="Includes\FrameBuffers.h" />
+    <ClInclude Include="Includes\FreeType.h" />
     <ClInclude Include="Includes\Libraries.h" />
     <ClInclude Include="Includes\Lights.h" />
     <ClInclude Include="Includes\Models.h" />
     <ClInclude Include="Includes\Shaders.h" />
+    <ClInclude Include="Includes\SpriteRenderers.h" />
     <ClInclude Include="Includes\TextRenderers.h" />
     <ClInclude Include="Includes\Textures.h" />
     <ClInclude Include="Includes\Ubos.h" />
@@ -339,6 +349,8 @@
     <ClInclude Include="Programs\Anti_Aliasing\Anti_aliasing.h" />
     <ClInclude Include="Programs\Blinn_Phong\Blinn_Phong.h" />
     <ClInclude Include="Programs\Bloom\Bloom.h" />
+    <ClInclude Include="Programs\Breakout\Breakout.h" />
+    <ClInclude Include="Programs\Breakout\BreakoutManager\BreakoutManager.h" />
     <ClInclude Include="Programs\Deferred_Shading\Deferred_Shading.h" />
     <ClInclude Include="Programs\FinalShadows\FinalShadows.h" />
     <ClInclude Include="Programs\Geometry_Shader\Geometry_Shader.h" />

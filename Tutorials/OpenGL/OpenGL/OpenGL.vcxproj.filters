@@ -229,6 +229,18 @@
     <Filter Include="Source Files\Classes\Init">
       <UniqueIdentifier>{23e369b2-9ff2-40e8-9c9d-d225cf628138}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Programs\Breakout">
+      <UniqueIdentifier>{1e9190fb-a3a2-49ff-8ec2-18006e13875b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Breakout\BreakoutManager">
+      <UniqueIdentifier>{7d72ab5b-11f1-4a1f-957f-e47d78ddeeb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Breakout">
+      <UniqueIdentifier>{abe78810-70d8-4755-9acb-db61f0e0f235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\SpriteRenderer">
+      <UniqueIdentifier>{d601b3f9-8dad-4b61-bec3-1c6eaf4ca53a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Programs\Advanced\Advanced.cpp">
@@ -287,6 +299,18 @@
     </ClCompile>
     <ClCompile Include="Classes\Init\Init.cpp">
       <Filter>Source Files\Classes\Init</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Breakout\Breakout.cpp">
+      <Filter>Source Files\Programs\Breakout</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Texture\TextureLoader.cpp">
+      <Filter>Source Files\Classes\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Random data\multiple_vertices.cpp">
+      <Filter>Source Files\Random data</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Breakout\BreakoutManager\BreakoutManager.cpp">
+      <Filter>Source Files\Programs\Breakout\BreakoutManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -635,6 +659,12 @@
     <None Include="Shaders\Text\text.vs">
       <Filter>Source Files\Shaders\Text</Filter>
     </None>
+    <None Include="Shaders\Breakout\sprite.fs">
+      <Filter>Source Files\Shaders\Breakout</Filter>
+    </None>
+    <None Include="Shaders\Breakout\sprite.vs">
+      <Filter>Source Files\Shaders\Breakout</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -795,6 +825,24 @@
     </ClInclude>
     <ClInclude Include="Classes\Init\Init.h">
       <Filter>Source Files\Classes\Init</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Breakout\Breakout.h">
+      <Filter>Source Files\Programs\Breakout</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Breakout\BreakoutManager\BreakoutManager.h">
+      <Filter>Source Files\Programs\Breakout\BreakoutManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\FreeType.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\SpriteRenderers.h">
+      <Filter>Source Files\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\SpriteRenderer\SpriteRenderer.h">
+      <Filter>Source Files\Classes\SpriteRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\SpriteRenderer\SpriteRendererManager.h">
+      <Filter>Source Files\Classes\SpriteRenderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

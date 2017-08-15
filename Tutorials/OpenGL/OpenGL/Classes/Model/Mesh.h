@@ -3,8 +3,6 @@
 #ifndef MESH_H
 #define MESH_H
 
-#include <glad\glad.h>
-#include <stdio.h>
 #include <assimp\Importer.hpp>
 #include <vector>
 #include <string>

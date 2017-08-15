@@ -1,10 +1,10 @@
 #pragma once
 
-#include <unordered_map>
-#include "FrameBuffer.h"
-
 #ifndef FRAMEBUFFERMANAGER_H
 #define FRAMEBUFFERMANAGER_H
+
+#include <unordered_map>
+#include "FrameBuffer.h"
 
 class FrameBufferManager {
 private:
@@ -43,7 +43,7 @@ public:
 		it = map.find(name);
 		if (it != map.end()) {
 			std::cout << "FrameBuffer already exists, replacing it..." << std::endl;
-			it->second;
+			delete it->second;
 		}
 
 		map[name] = program;

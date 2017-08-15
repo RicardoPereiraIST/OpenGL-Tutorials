@@ -1,10 +1,10 @@
 #pragma once
 
-#include <unordered_map>
-#include "Shader.h"
-
 #ifndef SHADERMANAGER_H
 #define SHADERMANAGER_H
+
+#include <unordered_map>
+#include "Shader.h"
 
 class ShaderManager {
 	private:

@@ -1,10 +1,10 @@
 #pragma once
 
-#include <unordered_map>
-#include "VertexBuffers.h"
-
 #ifndef VERTEXMANAGER_H
 #define VERTEXMANAGER_H
+
+#include <unordered_map>
+#include "VertexBuffers.h"
 
 class VertexManager {
 private:

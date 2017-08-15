@@ -11,14 +11,16 @@ float Init::lastFrame = 0.0f;
 //MOUSE
 float Init::lastX = width / 2, Init::lastY = height / 2;
 bool Init::firstMouse = true;
+bool Init::setCamera;
 
-Init::Init(unsigned int w, unsigned int h, bool d, int s, bool c, std::string t) {
+Init::Init(unsigned int w, unsigned int h, bool d, int s, bool c, std::string t, bool setC) {
 	width = w;
 	height = h;
 	debugLibrary = d;
 	samples = s;
 	cursor = c;
 	title = t;
+	setCamera = setC;
 
 	initializeGLFW();
 	createWindow();
@@ -29,9 +31,11 @@ Init::Init(unsigned int w, unsigned int h, bool d, int s, bool c, std::string t)
 	glViewport(0, 0, width, height);
 	setCallbacks();
 
-	//Camera
-	Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
-	CameraManager::instance()->add("camera", camera);
+	if (setCamera) {
+		//Camera
+		Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
+		CameraManager::instance()->add("camera", camera);
+	}
 }
 
 Init::~Init() {

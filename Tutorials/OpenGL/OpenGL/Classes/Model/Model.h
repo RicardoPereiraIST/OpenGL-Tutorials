@@ -3,15 +3,12 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include <glad\glad.h>
-#include <stdio.h>
 #include <assimp\Importer.hpp>
 #include <assimp\scene.h>
 #include <assimp\postprocess.h>
 #include <vector>
 #include <string>
 #include <sstream>
-#include <map>
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
 #include "Mesh.h"

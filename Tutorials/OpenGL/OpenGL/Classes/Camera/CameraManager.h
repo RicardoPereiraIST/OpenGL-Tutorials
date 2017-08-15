@@ -1,11 +1,11 @@
 #pragma once
 
+#ifndef CAMERAMANAGER_H
+#define CAMERAMANAGER_H
+
 #include <unordered_map>
 #include "Camera.h"
 #include <iostream>
-
-#ifndef CAMERAMANAGER_H
-#define CAMERAMANAGER_H
 
 class CameraManager {
 private:

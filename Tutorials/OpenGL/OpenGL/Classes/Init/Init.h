@@ -16,13 +16,14 @@ public:
 	static float lastFrame;
 	static unsigned int width, height;
 
-	Init(unsigned int w = 800, unsigned int h = 600, bool d = true, int s = 0, bool c = true, std::string t = "LearnOpenGL");
+	Init(unsigned int w = 800, unsigned int h = 600, bool d = true, int s = 0, bool c = true, std::string t = "LearnOpenGL", bool setC = true);
 	~Init();
 
 private:
 	//MOUSE
 	static float lastX, lastY;
 	static bool firstMouse;
+	static bool setCamera;
 
 	bool debugLibrary = true;
 	bool cursor = true;
