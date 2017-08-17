@@ -39,8 +39,8 @@ void gameLoop() {
 		init.deltaTime = currentFrame - init.lastFrame;
 		init.lastFrame = currentFrame;
 
-		manager->processInput(deltaTime);
-		manager->update(deltaTime);
+		manager->processInput(init.deltaTime);
+		manager->update(init.deltaTime);
 
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);

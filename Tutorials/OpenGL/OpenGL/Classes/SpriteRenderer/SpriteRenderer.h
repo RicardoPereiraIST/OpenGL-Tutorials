@@ -17,13 +17,12 @@ class SpriteRenderer {
 	private:
 		std::string shader;
 		std::string vertex;
-		std::string texture;
 
 	public:
-		SpriteRenderer(std::string sh, std::string v, std::string tex) : shader(sh), vertex(v), texture(tex) {}
+		SpriteRenderer(std::string sh, std::string v) : shader(sh), vertex(v) {}
 		~SpriteRenderer(){}
 
-		void draw(glm::vec2 position, glm::vec2 size, float rotate, glm::vec3 color) {
+		void draw(std::string texture, glm::vec2 position, glm::vec2 size, float rotate, glm::vec3 color) {
 			ShaderManager::instance()->get(shader)->use();
 
 			glm::mat4 model;

@@ -241,6 +241,18 @@
     <Filter Include="Source Files\Classes\SpriteRenderer">
       <UniqueIdentifier>{d601b3f9-8dad-4b61-bec3-1c6eaf4ca53a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Programs\Breakout\GameObject">
+      <UniqueIdentifier>{7e232e20-fccd-4571-a43a-10a7b2ca4352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Breakout\GameLevel">
+      <UniqueIdentifier>{9e84ceee-bb08-4eae-96d8-a85a081d0232}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Programs\Breakout\GameLevel\Levels">
+      <UniqueIdentifier>{4aa311ec-90bb-4b9b-be84-b52669d23d11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Images\Breakout">
+      <UniqueIdentifier>{37677c84-6e70-4490-9f4e-03b1f8d0dda2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Programs\Advanced\Advanced.cpp">
@@ -311,6 +323,15 @@
     </ClCompile>
     <ClCompile Include="Programs\Breakout\BreakoutManager\BreakoutManager.cpp">
       <Filter>Source Files\Programs\Breakout\BreakoutManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Breakout\GameObject\GameObject.cpp">
+      <Filter>Source Files\Programs\Breakout\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Breakout\GameLevel\GameLevel.cpp">
+      <Filter>Source Files\Programs\Breakout\GameLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="Programs\Breakout\GameObject\Ball.cpp">
+      <Filter>Source Files\Programs\Breakout\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -665,6 +686,18 @@
     <None Include="Shaders\Breakout\sprite.vs">
       <Filter>Source Files\Shaders\Breakout</Filter>
     </None>
+    <None Include="Programs\Breakout\GameLevel\Levels\1.lvl">
+      <Filter>Source Files\Programs\Breakout\GameLevel\Levels</Filter>
+    </None>
+    <None Include="Programs\Breakout\GameLevel\Levels\2.lvl">
+      <Filter>Source Files\Programs\Breakout\GameLevel\Levels</Filter>
+    </None>
+    <None Include="Programs\Breakout\GameLevel\Levels\3.lvl">
+      <Filter>Source Files\Programs\Breakout\GameLevel\Levels</Filter>
+    </None>
+    <None Include="Programs\Breakout\GameLevel\Levels\4.lvl">
+      <Filter>Source Files\Programs\Breakout\GameLevel\Levels</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -843,6 +876,15 @@
     </ClInclude>
     <ClInclude Include="Classes\SpriteRenderer\SpriteRendererManager.h">
       <Filter>Source Files\Classes\SpriteRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Breakout\GameObject\GameObject.h">
+      <Filter>Source Files\Programs\Breakout\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Breakout\GameLevel\GameLevel.h">
+      <Filter>Source Files\Programs\Breakout\GameLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="Programs\Breakout\GameObject\Ball.h">
+      <Filter>Source Files\Programs\Breakout\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1181,6 +1223,18 @@
     </Image>
     <Image Include="Images\PBR\rustediron1-alt2-Unreal-Engine\rustediron2_roughness.png">
       <Filter>Source Files\Images\PBR\plasticpattern1-ue</Filter>
+    </Image>
+    <Image Include="Images\Breakout\background.jpg">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\block.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\block_solid.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\paddle.png">
+      <Filter>Source Files\Images\Breakout</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
