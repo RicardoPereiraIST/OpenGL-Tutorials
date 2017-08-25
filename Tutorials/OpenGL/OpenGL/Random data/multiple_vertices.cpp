@@ -595,3 +595,24 @@ std::vector<float> spriteVertices = {
 	1.0f, 1.0f, 1.0f, 1.0f,
 	1.0f, 0.0f, 1.0f, 0.0f
 };
+
+std::vector<float> particle_quad = {
+	0.0f, 1.0f, 0.0f, 1.0f,
+	1.0f, 0.0f, 1.0f, 0.0f,
+	0.0f, 0.0f, 0.0f, 0.0f,
+
+	0.0f, 1.0f, 0.0f, 1.0f,
+	1.0f, 1.0f, 1.0f, 1.0f,
+	1.0f, 0.0f, 1.0f, 0.0f
+};
+
+std::vector<float> effects_quad = {
+	// Pos        // Tex
+	-1.0f, -1.0f, 0.0f, 0.0f,
+	1.0f,  1.0f, 1.0f, 1.0f,
+	-1.0f,  1.0f, 0.0f, 1.0f,
+
+	-1.0f, -1.0f, 0.0f, 0.0f,
+	1.0f, -1.0f, 1.0f, 0.0f,
+	1.0f,  1.0f, 1.0f, 1.0f
+};

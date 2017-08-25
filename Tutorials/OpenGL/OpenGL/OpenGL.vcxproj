@@ -226,6 +226,10 @@
     <None Include="Shaders\Bloom\blur.fs" />
     <None Include="Shaders\Bloom\blur.vs" />
     <None Include="Shaders\Bloom\light_box.fs" />
+    <None Include="Shaders\Breakout\effects.fs" />
+    <None Include="Shaders\Breakout\effects.vs" />
+    <None Include="Shaders\Breakout\particle.fs" />
+    <None Include="Shaders\Breakout\particle.vs" />
     <None Include="Shaders\Breakout\sprite.fs" />
     <None Include="Shaders\Breakout\sprite.vs" />
     <None Include="Shaders\Deffered_Shading\deferred_light_box.fs" />
@@ -326,6 +330,8 @@
     <ClInclude Include="Classes\Model\Mesh.h" />
     <ClInclude Include="Classes\Model\Model.h" />
     <ClInclude Include="Classes\Model\ModelManager.h" />
+    <ClInclude Include="Classes\Particle\Particle.h" />
+    <ClInclude Include="Classes\Particle\ParticleGenerator.h" />
     <ClInclude Include="Classes\Shader\Shader.h" />
     <ClInclude Include="Classes\Shader\ShaderManager.h" />
     <ClInclude Include="Classes\SpriteRenderer\SpriteRenderer.h" />
@@ -346,6 +352,7 @@
     <ClInclude Include="Includes\Libraries.h" />
     <ClInclude Include="Includes\Lights.h" />
     <ClInclude Include="Includes\Models.h" />
+    <ClInclude Include="Includes\Particles.h" />
     <ClInclude Include="Includes\Shaders.h" />
     <ClInclude Include="Includes\SpriteRenderers.h" />
     <ClInclude Include="Includes\TextRenderers.h" />

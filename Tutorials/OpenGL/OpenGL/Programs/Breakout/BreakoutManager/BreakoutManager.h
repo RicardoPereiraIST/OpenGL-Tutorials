@@ -6,12 +6,24 @@
 #include "..\GameLevel\GameLevel.h"
 #include <glm\glm.hpp>
 #include "..\GameObject\Ball.h"
+#include "..\..\..\Classes\Particle\ParticleGenerator.h"
 
 enum GameState {
 	GAME_ACTIVE,
 	GAME_MENU,
 	GAME_WIN
 };
+
+namespace Direction {
+	enum Direction {
+		UP,
+		RIGHT,
+		DOWN,
+		LEFT
+	};
+}
+
+typedef std::tuple<bool, Direction::Direction, glm::vec2> collision; // <collision?, what direction?, difference vector center - closest point>
 
 class BreakoutManager {
 private:
@@ -24,6 +36,7 @@ private:
 
 	GameObject *player;
 	Ball *ball;
+	ParticleGenerator *particles;
 
 	std::vector<GameLevel> levels;
 	unsigned int level = 0;
@@ -34,7 +47,11 @@ private:
 	void init();
 	void doCollisions();
 	bool checkCollision(GameObject &first, GameObject &second);
-	bool checkCollision(Ball &first, GameObject &second);
+	collision checkCollision(Ball &first, GameObject &second);
+	Direction::Direction vectorDirection(glm::vec2 closest);
+
+	void resetLevel();
+	void resetPlayer();
 
 public:
 	GameState state;

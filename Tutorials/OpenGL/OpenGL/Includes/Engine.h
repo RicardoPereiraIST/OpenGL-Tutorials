@@ -14,6 +14,7 @@
 #include "Cameras.h"
 #include "TextRenderers.h"
 #include "SpriteRenderers.h"
+#include "Particles.h"
 
 //OTHERS
 #include "..\Random data\multiple_vertices.h"

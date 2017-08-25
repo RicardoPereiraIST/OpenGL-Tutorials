@@ -231,6 +231,11 @@ public:
 		glUniform3fv(uniformID, 1, glm::value_ptr(v));
 	}
 
+	void setUniform(const char* name, glm::vec4 v) {
+		GLint uniformID = getUniformLocation(name);
+		glUniform4fv(uniformID, 1, glm::value_ptr(v));
+	}
+
 	void setUniform(const char* name, GLfloat* m) {
 		GLint uniformID = getUniformLocation(name);
 		glUniformMatrix4fv(uniformID, 1, GL_FALSE, m);

@@ -63,4 +63,8 @@ extern std::vector<float> hdrQuad;
 
 extern std::vector<float> spriteVertices;
 
+extern std::vector<float> particle_quad;
+
+extern std::vector<float> effects_quad;
+
 #endif // !MULTIPLE_VERTICES_H

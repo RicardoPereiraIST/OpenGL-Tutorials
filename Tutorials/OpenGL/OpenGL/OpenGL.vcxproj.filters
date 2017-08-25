@@ -253,6 +253,9 @@
     <Filter Include="Source Files\Images\Breakout">
       <UniqueIdentifier>{37677c84-6e70-4490-9f4e-03b1f8d0dda2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes\Particle">
+      <UniqueIdentifier>{04088762-a35c-47de-9457-00825030fdad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Programs\Advanced\Advanced.cpp">
@@ -698,6 +701,18 @@
     <None Include="Programs\Breakout\GameLevel\Levels\4.lvl">
       <Filter>Source Files\Programs\Breakout\GameLevel\Levels</Filter>
     </None>
+    <None Include="Shaders\Breakout\particle.fs">
+      <Filter>Source Files\Shaders\Breakout</Filter>
+    </None>
+    <None Include="Shaders\Breakout\particle.vs">
+      <Filter>Source Files\Shaders\Breakout</Filter>
+    </None>
+    <None Include="Shaders\Breakout\effects.fs">
+      <Filter>Source Files\Shaders\Breakout</Filter>
+    </None>
+    <None Include="Shaders\Breakout\effects.vs">
+      <Filter>Source Files\Shaders\Breakout</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -885,6 +900,15 @@
     </ClInclude>
     <ClInclude Include="Programs\Breakout\GameObject\Ball.h">
       <Filter>Source Files\Programs\Breakout\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Particle\Particle.h">
+      <Filter>Source Files\Classes\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Particle\ParticleGenerator.h">
+      <Filter>Source Files\Classes\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Particles.h">
+      <Filter>Source Files\Includes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
