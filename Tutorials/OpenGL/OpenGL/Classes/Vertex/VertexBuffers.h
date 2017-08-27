@@ -297,6 +297,24 @@ class VertexBuffers {
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 		}
 
+		//vec4 with position and texCoords in shader
+		void createFrameQuad(std::vector<float> v, bool c, bool t) {
+			vertices = v;
+			num_vertices = num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0));
+
+			glGenVertexArrays(1, &vao);
+			glGenBuffers(1, &vbo);
+
+			glBindBuffer(GL_ARRAY_BUFFER, vbo);
+			glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
+
+			glBindVertexArray(vao);
+			glEnableVertexAttribArray(0);
+			glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GL_FLOAT), (GLvoid*)0);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			glBindVertexArray(0);
+		}
+
 		~VertexBuffers() {
 			glDeleteVertexArrays(1, &vao);
 			glDeleteVertexArrays(1, &vbo);

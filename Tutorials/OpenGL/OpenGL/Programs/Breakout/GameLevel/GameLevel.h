@@ -9,6 +9,7 @@
 class GameLevel
 {
 public:
+	float destroyedBricks = 0, totalDestroyableBricks = 0;;
 	std::vector<GameObject> bricks;
 	GameLevel();
 	void load(const char *file, unsigned int levelWidth, unsigned int levelHeight);

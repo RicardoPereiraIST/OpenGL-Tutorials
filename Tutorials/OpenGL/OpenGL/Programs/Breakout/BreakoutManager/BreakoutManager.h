@@ -41,6 +41,14 @@ private:
 	std::vector<GameLevel> levels;
 	unsigned int level = 0;
 
+	bool firstTime = true;
+
+	bool shake = false;
+	float shakeTime = 0.0f;
+	bool confuse = false;
+	float confuseTime = 0.0f;
+	bool chaos = false;
+
 	BreakoutManager(unsigned int w, unsigned int h);
 	~BreakoutManager();
 

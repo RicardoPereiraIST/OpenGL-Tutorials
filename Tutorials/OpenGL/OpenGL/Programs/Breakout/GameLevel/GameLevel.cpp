@@ -15,6 +15,7 @@ GameLevel::GameLevel() {}
 void GameLevel::load(const char *file, unsigned int levelWidth, unsigned int levelHeight)
 {
 	bricks.clear();
+	destroyedBricks = 0;
 	unsigned int tileCode;
 	GameLevel level;
 	std::string line;
@@ -70,6 +71,7 @@ void GameLevel::init(std::vector<std::vector<unsigned int>> tileData, unsigned i
 
 			GameObject obj(pos, size, tileData[y][x] == 1 ? "block_solid" : "block", colors[tileData[y][x]]);
 			obj.isSolid = tileData[y][x] == 1 ? true : false;
+			if (!obj.isSolid) totalDestroyableBricks++;
 
 			bricks.push_back(obj);
 		}

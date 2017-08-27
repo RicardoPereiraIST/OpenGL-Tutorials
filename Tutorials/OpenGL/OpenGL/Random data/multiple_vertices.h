@@ -15,6 +15,14 @@ extern float blur[9];
 
 extern float edge_detection[9];
 
+extern std::vector<float> blur_kernel;
+
+extern std::vector<int> edge_kernel;
+
+extern float offset;
+
+extern std::vector<glm::vec2> offsets;
+
 extern std::vector<float> quadVertices;
 
 extern std::vector<float> cubeVerticesFaceCullCCW;

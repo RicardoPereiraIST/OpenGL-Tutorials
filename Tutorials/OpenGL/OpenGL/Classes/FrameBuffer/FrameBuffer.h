@@ -16,7 +16,7 @@ class FrameBuffer {
 	private:
 		unsigned int fbo, rbo;
 		unsigned int *fboBuffers;
-		unsigned int textureColorBufferMultiSampled;
+		unsigned int msfbo;
 		unsigned int n_buffers = 1;
 
 		bool initialized = false;
@@ -87,16 +87,29 @@ class FrameBuffer {
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		}
 
-		void createMultisampled(int width, int height, int samples) {
+		void createMultisampledTexture(int width, int height, int samples, bool stencil, bool color) {
 			// create a multisampled color attachment texture
-			glGenTextures(1, &textureColorBufferMultiSampled);
-			glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, textureColorBufferMultiSampled);
+			glGenTextures(1, &msfbo);
+			glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, msfbo);
 
 			glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, samples, GL_RGB, width, height, GL_TRUE);
 			glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, 0);
-			attachTexture2D(textureColorBufferMultiSampled, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE);
+			attachTexture2D(msfbo, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE);
 
-			createMultisampledRBO(width, height, samples);
+			createMultisampledRBO(width, height, samples, stencil, color);
+
+			checkError();
+
+			glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		}
+
+		void createMultisampledFrame(std::string textureName, int width, int height, int samples, bool stencil, bool color) {
+			glGenFramebuffers(1, &msfbo);
+			glGenFramebuffers(1, &fbo);
+			glBindFramebuffer(GL_FRAMEBUFFER, msfbo);
+			createMultisampledRBO(width, height, samples, stencil, color);
+			glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, TextureManager::instance()->get(textureName)->getID(), 0);
 
 			checkError();
 
@@ -117,14 +130,18 @@ class FrameBuffer {
 			createShadowMap(textureName, cube);
 		}
 
-		FrameBuffer(int width, int height, int samples) : FrameBuffer() {
-			createMultisampled(width, height, samples);
+		FrameBuffer(int width, int height, int samples, bool stencil = true, bool color = false) : FrameBuffer() {
+			createMultisampledTexture(width, height, samples, stencil, color);
+		}
+
+		FrameBuffer(std::string textureName, int width, int height, int samples, bool stencil = true, bool color = false) : FrameBuffer() {
+			createMultisampledFrame(textureName, width, height, samples, stencil, color);
 		}
 
 		~FrameBuffer() {
 			glDeleteFramebuffers(1, &fbo);
 			glDeleteFramebuffers(1, &rbo);
-			glDeleteFramebuffers(1, &textureColorBufferMultiSampled);
+			glDeleteFramebuffers(1, &msfbo);
 			if (fboBuffers) {
 				glDeleteFramebuffers(n_buffers, fboBuffers);
 				delete fboBuffers;
@@ -185,15 +202,15 @@ class FrameBuffer {
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, attachment, GL_RENDERBUFFER, rbo);
 		}
 
-		void createMultisampledRBO(int width, int height, int samples, bool stencil = true) {
+		void createMultisampledRBO(int width, int height, int samples, bool stencil = true, bool color = false) {
 			glGenRenderbuffers(1, &rbo);
 
 			GLenum type, attachment;
-			type = stencil ? GL_DEPTH24_STENCIL8 : GL_DEPTH_COMPONENT24;
-			attachment = stencil ? GL_DEPTH_STENCIL_ATTACHMENT : GL_DEPTH_ATTACHMENT;
+			type = color ? GL_RGB : stencil ? GL_DEPTH24_STENCIL8 : GL_DEPTH_COMPONENT24;
+			attachment = color ? GL_COLOR_ATTACHMENT0 : stencil ? GL_DEPTH_STENCIL_ATTACHMENT : GL_DEPTH_ATTACHMENT;
 
 			glBindRenderbuffer(GL_RENDERBUFFER, rbo);
-			glRenderbufferStorageMultisample(GL_RENDERBUFFER, samples, GL_DEPTH24_STENCIL8, width, height);
+			glRenderbufferStorageMultisample(GL_RENDERBUFFER, samples, type, width, height);
 			glBindRenderbuffer(GL_RENDERBUFFER, 0);
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, attachment, GL_RENDERBUFFER, rbo);
 		}
@@ -221,6 +238,10 @@ class FrameBuffer {
 
 		void bind(GLenum option = GL_FRAMEBUFFER) {
 			glBindFramebuffer(option, fbo);
+		}
+
+		void bindMultisampled(GLenum option = GL_FRAMEBUFFER) {
+			glBindFramebuffer(option, msfbo);
 		}
 
 		void bindIndex(int i, GLenum option = GL_FRAMEBUFFER) {

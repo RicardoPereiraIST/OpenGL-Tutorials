@@ -20,6 +20,32 @@ float edge_detection[9] = {
 	1, 1, 1
 };
 
+std::vector<float> blur_kernel = {
+	1.0 / 16, 2.0 / 16, 1.0 / 16,
+	2.0 / 16, 4.0 / 16, 2.0 / 16,
+	1.0 / 16, 2.0 / 16, 1.0 / 16
+};
+
+std::vector<int> edge_kernel = {
+	-1, -1, -1,
+	-1,  8, -1,
+	-1, -1, -1
+};
+
+float offset = 1.0f / 300.0f;
+
+std::vector<glm::vec2> offsets = {
+	{ -offset,  offset },  // top-left
+	{ 0.0f,    offset },  // top-center
+	{ offset,  offset },  // top-right
+	{ -offset,  0.0f },  // center-left
+	{ 0.0f,    0.0f },  // center-center
+	{ offset,  0.0f },  // center - right
+	{ -offset, -offset },  // bottom-left
+	{ 0.0f,   -offset },  // bottom-center
+	{ offset, -offset }   // bottom-right    
+};
+
 std::vector<float> quadVertices = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
 									// positions   // texCoords
 	-1.0f,  1.0f,  0.0f, 1.0f,

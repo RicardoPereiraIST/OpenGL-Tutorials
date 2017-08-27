@@ -140,11 +140,18 @@ void TextureLoader::createTexture(int width, int height, bool floating, bool alp
 			type = GL_RGB;
 	}
 
-	for (int i = 0; i < n_textures; i++) {
-		glBindTexture(GL_TEXTURE_2D, bufferIDs[i]);
+	if (n_textures == 1) {
+		glBindTexture(GL_TEXTURE_2D, textureID);
 		glTexImage2D(GL_TEXTURE_2D, 0, type, width, height, 0, alpha ? GL_RGBA : GL_RGB, format, NULL);
-
 		setTexParameters(min_mag, s_t, false, false, false);
+	}
+	else {
+		for (int i = 0; i < n_textures; i++) {
+			glBindTexture(GL_TEXTURE_2D, bufferIDs[i]);
+			glTexImage2D(GL_TEXTURE_2D, 0, type, width, height, 0, alpha ? GL_RGBA : GL_RGB, format, NULL);
+
+			setTexParameters(min_mag, s_t, false, false, false);
+		}
 	}
 }
 

@@ -5,6 +5,7 @@
 #include <glfw3.h>
 #include "..\..\..\Includes\SpriteRenderers.h"
 #include "..\..\..\Random data\multiple_vertices.h"
+#include "..\..\..\Includes\FrameBuffers.h"
 
 BreakoutManager *BreakoutManager::manager = NULL;
 
@@ -36,6 +37,14 @@ void BreakoutManager::init() {
 	particleSh->setUniform("sprite", 0);
 	particleSh->setUniform("projection", projection);
 	ShaderManager::instance()->add("particle", particleSh);
+
+	Shader *effectsSh = new Shader("Shaders/Breakout/effects.vs", "Shaders/Breakout/effects.fs");
+	effectsSh->use();
+	effectsSh->setUniform("scene", 0);
+	effectsSh->setUniform("offsets", 9, offsets);
+	effectsSh->setUniform("edge_kernel", 9, edge_kernel);
+	effectsSh->setUniform("blur_kernel", 9, blur_kernel);
+	ShaderManager::instance()->add("effects", effectsSh);
 
 	TextureLoader *face = new TextureLoader();
 	face->load("Images/faces/awesomeface.png");
@@ -71,6 +80,15 @@ void BreakoutManager::init() {
 	SpriteRendererManager::instance()->add("sprite", sr);
 
 	particles = new ParticleGenerator("particle", "particle", "particle", 500);
+
+	VertexBuffers *effectsQuad = new VertexBuffers();
+	effectsQuad->createFrameQuad(effects_quad, false, true);
+	VertexManager::instance()->add("effects", effectsQuad);
+	TextureLoader *effectsTex = new TextureLoader();
+	effectsTex->createTexture(width, height, false, false, GL_UNSIGNED_BYTE, GL_LINEAR, GL_REPEAT);
+	TextureManager::instance()->add("effects", effectsTex);
+	FrameBuffer *f1 = new FrameBuffer("effects", width, height, 8, false, true);
+	FrameBufferManager::instance()->add("effects", f1);
 
 	GameLevel one, two, three, four;
 	one.load("Programs/Breakout/GameLevel/Levels/1.lvl", width, height * 0.5f);
@@ -124,6 +142,27 @@ void BreakoutManager::update(float dt) {
 	doCollisions();
 	particles->update(dt, *ball, 2, glm::vec2(ball->radius / 2));
 
+	if (shakeTime > 0.0f)
+	{
+		shakeTime -= dt;
+		if (shakeTime <= 0.0f)
+			shake = false;
+	}
+
+	confuseTime += dt;
+	if (levels[level].destroyedBricks == levels[level].totalDestroyableBricks - 10) {
+		chaos = true;
+	}
+
+	if (!chaos && !confuse && confuseTime >= 10.0f) {
+		confuse = true;
+	}
+
+	if (!chaos && confuse && confuseTime >= 15.0f) {
+		confuse = false;
+		confuseTime = 0.0f;
+	}
+
 	if (ball->position.y >= height)
 	{
 		resetLevel();
@@ -134,11 +173,34 @@ void BreakoutManager::update(float dt) {
 void BreakoutManager::render() {
 	if (state == GAME_ACTIVE)
 	{
+		if (firstTime) {
+			confuseTime = 0.0f;
+			firstTime = false;
+		}
+
+		//draw to frame
+		FrameBufferManager::instance()->get("effects")->bindMultisampled();
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
 		SpriteRendererManager::instance()->get("sprite")->draw("background", glm::vec2(0, 0), glm::vec2(width, height), 0.0f, glm::vec3(1.0f,1.0f,1.0f));
 		levels[level].draw("sprite");
 		player->draw("sprite");
 		particles->draw();
 		ball->draw("sprite");
+
+		//end render (blit frame)
+		FrameBufferManager::instance()->blitMultisampled("effects", width, height);
+
+		//render quad
+		ShaderManager::instance()->get("effects")->use();
+		ShaderManager::instance()->get("effects")->setUniform("time", (float)glfwGetTime());
+		ShaderManager::instance()->get("effects")->setUniform("confuse", confuse);
+		ShaderManager::instance()->get("effects")->setUniform("chaos", chaos);
+		ShaderManager::instance()->get("effects")->setUniform("shake", shake);
+
+		TextureManager::instance()->get("effects")->bind(0);
+		VertexManager::instance()->get("effects")->draw();
 	}
 }
 
@@ -151,9 +213,15 @@ void BreakoutManager::doCollisions()
 			collision collision = checkCollision(*ball, box);
 			if (std::get<0>(collision))
 			{
-				if (!box.isSolid)
+				if (!box.isSolid) {
 					box.destroyed = true;
-
+					levels[level].destroyedBricks++;
+				}
+				else
+				{   // if block is solid, enable shake effect
+					shakeTime = 0.05f;
+					shake = true;
+				}
 				// Collision resolution
 				Direction::Direction dir = std::get<1>(collision);
 				glm::vec2 diff_vector = std::get<2>(collision);
@@ -232,6 +300,11 @@ collision BreakoutManager::checkCollision(Ball &first, GameObject &second) {
 void BreakoutManager::resetLevel()
 {
 	levels[level].load(("Programs/Breakout/GameLevel/Levels/"+std::to_string(level+1)+".lvl").c_str(), width, height * 0.5f);
+	shake = false;
+	confuse = false;
+	chaos = false;
+	shakeTime = 0.0f;
+	confuseTime = 0.0f;
 }
 
 void BreakoutManager::resetPlayer()

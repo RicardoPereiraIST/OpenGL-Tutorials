@@ -211,6 +211,21 @@ public:
 		glUniform1i(uniformID, i);
 	}
 
+	void setUniform(const char* name, int n, std::vector<int> v) {
+		GLint uniformID = getUniformLocation(name);
+		glUniform1iv(uniformID, n, v.data());
+	}
+
+	void setUniform(const char* name, int n, std::vector<float> v) {
+		GLint uniformID = getUniformLocation(name);
+		glUniform1fv(uniformID, n, v.data());
+	}
+
+	void setUniform(const char* name, int n, std::vector<glm::vec2> v) {
+		GLint uniformID = getUniformLocation(name);
+		glUniform2fv(uniformID, n, (GLfloat*) v.data());
+	}
+
 	void setUniform(const char* name, float x, float y, float z, float w) {
 		GLint uniformID = getUniformLocation(name);
 		glUniform4f(uniformID, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
