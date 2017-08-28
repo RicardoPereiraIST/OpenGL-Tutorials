@@ -102,7 +102,7 @@
       <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;irrKlang.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -117,7 +117,7 @@
       <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;irrKlang.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -136,7 +136,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;irrKlang.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -155,7 +155,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glfw3.lib;legacy_stdio_definitions.lib;assimp-vc140-mt.lib;freetype28d.lib;irrKlang.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -368,6 +368,7 @@
     <ClInclude Include="Programs\Breakout\GameLevel\GameLevel.h" />
     <ClInclude Include="Programs\Breakout\GameObject\Ball.h" />
     <ClInclude Include="Programs\Breakout\GameObject\GameObject.h" />
+    <ClInclude Include="Programs\Breakout\GameObject\PowerUp.h" />
     <ClInclude Include="Programs\Deferred_Shading\Deferred_Shading.h" />
     <ClInclude Include="Programs\FinalShadows\FinalShadows.h" />
     <ClInclude Include="Programs\Geometry_Shader\Geometry_Shader.h" />
@@ -387,6 +388,13 @@
     <Image Include="Images\Breakout\block.png" />
     <Image Include="Images\Breakout\block_solid.png" />
     <Image Include="Images\Breakout\paddle.png" />
+    <Image Include="Images\Breakout\particle.png" />
+    <Image Include="Images\Breakout\powerup_chaos.png" />
+    <Image Include="Images\Breakout\powerup_confuse.png" />
+    <Image Include="Images\Breakout\powerup_increase.png" />
+    <Image Include="Images\Breakout\powerup_passthrough.png" />
+    <Image Include="Images\Breakout\powerup_speed.png" />
+    <Image Include="Images\Breakout\powerup_sticky.png" />
     <Image Include="Images\containers\container.jpg" />
     <Image Include="Images\containers\container2.png" />
     <Image Include="Images\containers\container2_specular.png" />
@@ -502,6 +510,13 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\Arial\arial.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Music\Sounds\bleep.mp3" />
+    <Media Include="Music\Sounds\bleep.wav" />
+    <Media Include="Music\Sounds\powerup.wav" />
+    <Media Include="Music\Sounds\solid.wav" />
+    <Media Include="Music\Tracks\breakout.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

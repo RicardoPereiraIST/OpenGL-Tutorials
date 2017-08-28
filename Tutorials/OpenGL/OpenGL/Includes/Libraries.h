@@ -10,5 +10,6 @@
 #include <glm\gtc\type_ptr.hpp>
 #include <boost\filesystem.hpp>
 #include "FreeType.h"
+#include <irrklang/irrKlang.h>
 
 #endif

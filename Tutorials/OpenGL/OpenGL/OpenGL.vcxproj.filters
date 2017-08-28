@@ -256,6 +256,15 @@
     <Filter Include="Source Files\Classes\Particle">
       <UniqueIdentifier>{04088762-a35c-47de-9457-00825030fdad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Music">
+      <UniqueIdentifier>{bff7dc3a-8a9a-4932-92ec-110c104fa333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Music\Sounds">
+      <UniqueIdentifier>{80525d3f-883e-4439-8625-3e3130666863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Music\Tracks">
+      <UniqueIdentifier>{43140512-f176-401a-b687-7f03ebdb2173}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Programs\Advanced\Advanced.cpp">
@@ -910,6 +919,9 @@
     <ClInclude Include="Includes\Particles.h">
       <Filter>Source Files\Includes</Filter>
     </ClInclude>
+    <ClInclude Include="Programs\Breakout\GameObject\PowerUp.h">
+      <Filter>Source Files\Programs\Breakout\GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="nanosuit\arm_dif.png">
@@ -1260,10 +1272,48 @@
     <Image Include="Images\Breakout\paddle.png">
       <Filter>Source Files\Images\Breakout</Filter>
     </Image>
+    <Image Include="Images\Breakout\powerup_chaos.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\powerup_confuse.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\powerup_increase.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\powerup_passthrough.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\powerup_speed.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\powerup_sticky.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
+    <Image Include="Images\Breakout\particle.png">
+      <Filter>Source Files\Images\Breakout</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\Arial\arial.ttf">
       <Filter>Source Files\Fonts\Arial</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Music\Tracks\breakout.mp3">
+      <Filter>Source Files\Music\Tracks</Filter>
+    </Media>
+    <Media Include="Music\Sounds\bleep.mp3">
+      <Filter>Source Files\Music\Sounds</Filter>
+    </Media>
+    <Media Include="Music\Sounds\bleep.wav">
+      <Filter>Source Files\Music\Sounds</Filter>
+    </Media>
+    <Media Include="Music\Sounds\powerup.wav">
+      <Filter>Source Files\Music\Sounds</Filter>
+    </Media>
+    <Media Include="Music\Sounds\solid.wav">
+      <Filter>Source Files\Music\Sounds</Filter>
+    </Media>
   </ItemGroup>
 </Project>

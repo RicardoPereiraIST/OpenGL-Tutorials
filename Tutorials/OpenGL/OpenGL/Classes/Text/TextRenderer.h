@@ -90,7 +90,7 @@ class TextRenderer {
 			loadCharacters(pathForFont, size, y_size);
 		}
 
-		void renderText(std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color)
+		void renderText(std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color = glm::vec3(1.0, 1.0f, 1.0f), bool reverse = false)
 		{
 			// Activate corresponding render state	
 			ShaderManager::instance()->get(shader)->use();
@@ -103,25 +103,48 @@ class TextRenderer {
 				Character ch = Characters[*c];
 
 				GLfloat xpos = x + ch.Bearing.x * scale;
-				GLfloat ypos = y - (ch.Size.y - ch.Bearing.y) * scale;
+				GLfloat ypos;
+
+				if(reverse)
+					ypos = y + (this->Characters['H'].Bearing.y - ch.Bearing.y) * scale;
+				else
+					ypos = y - (ch.Size.y - ch.Bearing.y) * scale;
 
 				GLfloat w = ch.Size.x * scale;
 				GLfloat h = ch.Size.y * scale;
 				// Update VBO for each character
-				GLfloat vertices[6][4] = {
-					{ xpos,     ypos + h,   0.0, 0.0 },
-					{ xpos,     ypos,       0.0, 1.0 },
-					{ xpos + w, ypos,       1.0, 1.0 },
 
-					{ xpos,     ypos + h,   0.0, 0.0 },
-					{ xpos + w, ypos,       1.0, 1.0 },
-					{ xpos + w, ypos + h,   1.0, 0.0 }
-				};
+				if (reverse) {
+					GLfloat vertices[6][4] = {
+						{ xpos,     ypos + h,   0.0, 1.0 },
+						{ xpos + w, ypos,       1.0, 0.0 },
+						{ xpos,     ypos,       0.0, 0.0 },
+
+						{ xpos,     ypos + h,   0.0, 1.0 },
+						{ xpos + w, ypos + h,   1.0, 1.0 },
+						{ xpos + w, ypos,       1.0, 0.0 }
+					};
+
+					// Update content of VBO memory
+					VertexManager::instance()->get(vertexName)->updateGliphQuad(vertices);
+				}
+				else {
+					GLfloat vertices[6][4] = {
+						{ xpos,     ypos + h,   0.0, 0.0 },
+						{ xpos,     ypos,       0.0, 1.0 },
+						{ xpos + w, ypos,       1.0, 1.0 },
+
+						{ xpos,     ypos + h,   0.0, 0.0 },
+						{ xpos + w, ypos,       1.0, 1.0 },
+						{ xpos + w, ypos + h,   1.0, 0.0 }
+					};
+
+					// Update content of VBO memory
+					VertexManager::instance()->get(vertexName)->updateGliphQuad(vertices);
+				}
 
 				// Render glyph texture over quad
 				TextureManager::instance()->get(ch.textureName)->bind(0);
-				// Update content of VBO memory
-				VertexManager::instance()->get(vertexName)->updateGliphQuad(vertices);
 				// Render quad
 				VertexManager::instance()->get(vertexName)->draw();
 				// Now advance cursors for next glyph (note that advance is number of 1/64 pixels)

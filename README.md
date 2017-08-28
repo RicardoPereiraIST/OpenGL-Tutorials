@@ -11,6 +11,7 @@ There are multiple dependencies:
 >* [GLM](https://glm.g-truc.net)
 >* [Stbi](https://github.com/nothings/stb/blob/master/stb_image.h)
 >* [Vld](https://vld.codeplex.com/)
+>* [irrKlang](http://www.ambiera.com/irrklang/)
 
 All the resources are either from Google or linked in Joey's tutorial.
 
@@ -25,8 +26,6 @@ All the resources are either from Google or linked in Joey's tutorial.
 
 ### Incoming:
 
-> Finish all tutorials (2D Game).
->
 > Understand and correct problems.
 >
 > Implement other lights in parallax (Normal_parallax_mapping.cpp).
