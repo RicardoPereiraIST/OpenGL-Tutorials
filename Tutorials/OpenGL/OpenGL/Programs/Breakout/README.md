@@ -24,6 +24,5 @@ There are 6 powerups (4 positive and 2 negative):
 
 
 >* Press "space" to launch ball.
-
 >* Press "a" to move left.
 >* Press "d" to move right.
