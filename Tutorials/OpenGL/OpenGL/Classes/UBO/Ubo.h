@@ -3,6 +3,9 @@
 #ifndef UBO_H
 #define UBO_H
 
+#include <glad\glad.h>
+#include <glm\glm.hpp>
+#include <glm\gtc\type_ptr.hpp>
 #include <iostream>
 
 class UboException : public std::runtime_error {
