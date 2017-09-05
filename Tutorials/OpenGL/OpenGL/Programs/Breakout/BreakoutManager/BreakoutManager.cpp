@@ -163,10 +163,7 @@ void BreakoutManager::processInput(float dt) {
 		}
 		if (keys[GLFW_KEY_S] && !keysProcessed[GLFW_KEY_S])
 		{
-			if (level > 0)
-				--level;
-			else
-				level = 3;
+			level = (level - 1) % levels.size();
 			keysProcessed[GLFW_KEY_S] = true;
 		}
 	}
