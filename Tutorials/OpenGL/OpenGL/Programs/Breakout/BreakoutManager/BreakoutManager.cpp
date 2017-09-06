@@ -102,7 +102,7 @@ void BreakoutManager::init() {
 	tex_chaos->load("Images/Breakout/powerup_chaos.png");
 	TextureManager::instance()->add("tex_chaos", tex_chaos);
 
-	VertexBuffers *spriteQuad = new VertexBuffers(spriteVertices, false, true, 2, true);
+	VertexBuffers *spriteQuad = new VertexBuffers(spriteVertices, false, true, 2, 4);
 	VertexManager::instance()->add("sprite", spriteQuad);
 
 	VertexBuffers *particleQuad = new VertexBuffers(particle_quad, false, true, 2);
@@ -113,8 +113,8 @@ void BreakoutManager::init() {
 
 	particles = new ParticleGenerator("particle", "particle", "particle", 500);
 
-	VertexBuffers *effectsQuad = new VertexBuffers();
-	effectsQuad->createFrameQuad(effects_quad, false, true);
+	//vec4 with position and texCoords in shader
+	VertexBuffers *effectsQuad = new VertexBuffers(effects_quad, false, true, 2, 4);
 	VertexManager::instance()->add("effects", effectsQuad);
 	TextureLoader *effectsTex = new TextureLoader();
 	effectsTex->createTexture(width, height, false, false, GL_UNSIGNED_BYTE, GL_LINEAR, GL_REPEAT);

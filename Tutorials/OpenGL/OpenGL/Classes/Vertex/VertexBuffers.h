@@ -23,10 +23,11 @@ class VertexBuffers {
 		std::vector<float> vertices;
 		std::vector<unsigned int> indices;
 		glm::vec2 *instances;
+		unsigned int beginningStride = 0;
 
 		const float PI = 3.14159265359;
 		
-		void create() {
+		void create(bool reverse) {
 			glGenVertexArrays(1, &vao);
 			glGenBuffers(1, &vbo);
 
@@ -58,17 +59,33 @@ class VertexBuffers {
 			int attrib = 0;
 
 			// position attribute
-			glVertexAttribPointer(attrib, sizeof_vector, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)0);
-			glEnableVertexAttribArray(attrib++);
-			// color attribute
-			if (colors) {
-				glVertexAttribPointer(attrib, 3, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)(sizeof_vector * sizeof(float)));
+			if (!reverse) {
+				glVertexAttribPointer(attrib, beginningStride == 0 ? sizeof_vector : beginningStride, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)0);
 				glEnableVertexAttribArray(attrib++);
+				// color attribute
+				if (colors) {
+					glVertexAttribPointer(attrib, 3, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)(sizeof_vector * sizeof(float)));
+					glEnableVertexAttribArray(attrib++);
+				}
+				// texture coord attribute
+				if (texcoords) {
+					glVertexAttribPointer(attrib, 2, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)((sizeof_vector + c) * sizeof(float)));
+					glEnableVertexAttribArray(attrib++);
+				}
 			}
-			// texture coord attribute
-			if (texcoords) {
-				glVertexAttribPointer(attrib, 2, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)((sizeof_vector + c) * sizeof(float)));
+			else {
+				glVertexAttribPointer(attrib, beginningStride == 0 ? sizeof_vector : beginningStride, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)0);
 				glEnableVertexAttribArray(attrib++);
+				// texture coord attribute
+				if (texcoords) {
+					glVertexAttribPointer(attrib, 2, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)(sizeof_vector * sizeof(float)));
+					glEnableVertexAttribArray(attrib++);
+				}
+				// color attribute
+				if (colors) {
+					glVertexAttribPointer(attrib, 3, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)((sizeof_vector + t) * sizeof(float)));
+					glEnableVertexAttribArray(attrib++);
+				}
 			}
 			if (tangents) {
 				glVertexAttribPointer(attrib, 3, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)((sizeof_vector + c + t) * sizeof(float)));
@@ -91,42 +108,12 @@ class VertexBuffers {
 			glEnableVertexAttribArray(0);
 		}
 
-		void createSprite() {
-			glGenVertexArrays(1, &vao);
-			glGenBuffers(1, &vbo);
-
-			glBindBuffer(GL_ARRAY_BUFFER, vbo);
-			glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
-
-			glBindVertexArray(vao);
-			
-			int c = 0, t = 0, ta = 0, bit = 0;
-			if (colors) c = 3;
-			if (texcoords) t = 2;
-			if (tangents) ta = 3;
-			if (bitangents) bit = 3;
-
-			int attrib = 0;
-
-			glEnableVertexAttribArray(attrib);
-			glVertexAttribPointer(attrib, 4, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t + ta + bit) * sizeof(float), (void*)0);
-
-			glBindBuffer(GL_ARRAY_BUFFER, 0);
-			glBindVertexArray(0);
-		}
-
 		//Function to create spheres
 		void createSphere(unsigned int X_SEGMENTS, unsigned int Y_SEGMENTS) {
-			glGenVertexArrays(1, &vao);
-
-			unsigned int vbo, ebo;
-			glGenBuffers(1, &vbo);
-			glGenBuffers(1, &ebo);
-
 			std::vector<glm::vec3> positions;
 			std::vector<glm::vec2> uv;
 			std::vector<glm::vec3> normals;
-			std::vector<unsigned int> indices;
+			indices.clear();
 
 			for (unsigned int y = 0; y <= Y_SEGMENTS; ++y)
 			{
@@ -167,104 +154,105 @@ class VertexBuffers {
 			}
 
 			num_indices = indices.size();
-
-			std::vector<float> data;
+			vertices.clear();
 			for (int i = 0; i < positions.size(); ++i)
 			{
-				data.push_back(positions[i].x);
-				data.push_back(positions[i].y);
-				data.push_back(positions[i].z);
+				vertices.push_back(positions[i].x);
+				vertices.push_back(positions[i].y);
+				vertices.push_back(positions[i].z);
 				if (uv.size() > 0)
 				{
-					data.push_back(uv[i].x);
-					data.push_back(uv[i].y);
+					if (!texcoords) texcoords = true;
+					vertices.push_back(uv[i].x);
+					vertices.push_back(uv[i].y);
 				}
 				if (normals.size() > 0)
 				{
-					data.push_back(normals[i].x);
-					data.push_back(normals[i].y);
-					data.push_back(normals[i].z);
+					if (!colors) colors = true;
+					vertices.push_back(normals[i].x);
+					vertices.push_back(normals[i].y);
+					vertices.push_back(normals[i].z);
 				}
 			}
+
+			create(true);
+		}
+
+		void initialize(std::vector<float> v, bool c, bool t, int size_vector, bool ta, bool bit, unsigned int begStride) {
+			vertices = v;
+			colors = c;
+			texcoords = t;
+			tangents = ta;
+			bitangents = bit;
+			sizeof_vector = size_vector;
+			num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0) + (ta ? 3 : 0) + (bit ? 3 : 0));
+			beginningStride = begStride;
+		}
+
+		void initializeInstances(glm::vec2 * inst) {
+			has_instances = true;
+			instances = inst;
+		}
+
+		void initializeIndices(std::vector<unsigned int> i) {
+			has_indices = true;
+			indices = i;
+			num_indices = indices.size();
+		}
+
+		void bindAndDraw(GLenum primitive, int instances = 0) {
 			glBindVertexArray(vao);
-			glBindBuffer(GL_ARRAY_BUFFER, vbo);
-			glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(float), &data[0], GL_STATIC_DRAW);
-			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-			glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
 
-			int c = 3, t = 2;
-			int attrib = 0;
+			if (instances > 0) {
+				if (has_indices) {
+					glDrawElementsInstanced(primitive, num_indices, GL_UNSIGNED_INT, 0, instances);
+				}
+				else {
+					glDrawArraysInstanced(primitive, 0, num_vertices, instances);
+				}
+			}
+			else {
+				if (has_indices) {
+					glDrawElements(primitive, num_indices, GL_UNSIGNED_INT, 0);
+				}
+				else {
+					glDrawArrays(primitive, 0, num_vertices);
+				}
+			}
 
-			//Here we do uv first, then normals
-			glEnableVertexAttribArray(attrib);
-			glVertexAttribPointer(attrib++, 3, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t) * sizeof(float), (void*)0);
-			glEnableVertexAttribArray(attrib);
-			glVertexAttribPointer(attrib++, 2, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t) * sizeof(float), (void*)(sizeof_vector * sizeof(float)));
-			glEnableVertexAttribArray(attrib);
-			glVertexAttribPointer(attrib++, 3, GL_FLOAT, GL_FALSE, (sizeof_vector + c + t) * sizeof(float), (void*)((sizeof_vector + t) * sizeof(float)));
+			glBindVertexArray(0);
 		}
 
 	public:
 		VertexBuffers(){}
 
-		VertexBuffers(std::vector<float> v, bool c, bool t, int size_vector = 3, bool sprite = false) {
-			vertices = v;
-			colors = c;
-			texcoords = t;
-			sizeof_vector = size_vector;
-			num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0));
-			if (sprite)
-				createSprite();
-			else
-				create();
+		VertexBuffers(std::vector<float> v, bool c, bool t, int size_vector = 3, unsigned int begStride = 0, bool reverse = false) {
+			initialize(v, c, t, size_vector, false, false, begStride);
+			create(reverse);
 		}
 
-		VertexBuffers(std::vector<float> v, bool c, bool t, bool ta, bool bit, int size_vector = 3) {
-			vertices = v;
-			colors = c;
-			texcoords = t;
-			sizeof_vector = size_vector;
-			tangents = ta;
-			bitangents = bit;
-			num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0) + (ta ? 3 : 0) + (bit ? 3 : 0));
-			create();
+		VertexBuffers(std::vector<float> v, bool c, bool t, bool ta, bool bit, int size_vector = 3, unsigned int begStride = 0, bool reverse = false) {
+			initialize(v, c, t, size_vector, ta, bit, begStride);
+			create(reverse);
 		}
 
-		VertexBuffers(std::vector<float> v, bool c, bool t, glm::vec2 * inst, int size_vector = 3) {
-			vertices = v;
-			colors = c;
-			texcoords = t;
-			sizeof_vector = size_vector;
-			num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0));
-			has_instances = true;
-			instances = inst;
-			create();
+		VertexBuffers(std::vector<float> v, bool c, bool t, glm::vec2 * inst, int size_vector = 3, unsigned int begStride = 0, bool reverse = false) {
+			initialize(v, c, t, size_vector, false, false, begStride);
+			initializeInstances(inst);
+			create(reverse);
 		}
 
-		VertexBuffers(std::vector<float> v, std::vector<unsigned int> i, bool c, bool t, int size_vector = 3) {
-			has_indices = true;
-			vertices = v;
-			indices = i;
-			colors = c;
-			texcoords = t;
-			sizeof_vector = size_vector;
-			num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0));
-			num_indices = indices.size();
-			create();
+		VertexBuffers(std::vector<float> v, std::vector<unsigned int> i, bool c, bool t, int size_vector = 3, unsigned int begStride = 0, bool reverse = false) {
+			initialize(v, c, t, size_vector, false, false, begStride);
+			initializeIndices(i);
+			create(reverse);
 		}
 
-		VertexBuffers(std::vector<float> v, std::vector<unsigned int> i, bool c, bool t, glm::vec2 * inst, int size_vector = 3) {
-			has_indices = true;
-			has_instances = true;
-			vertices = v;
-			indices = i;
-			colors = c;
-			texcoords = t;
-			sizeof_vector = size_vector;
-			num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0));
-			num_indices = indices.size();
-			instances = inst;
-			create();
+		VertexBuffers(std::vector<float> v, std::vector<unsigned int> i, bool c, bool t, glm::vec2 * inst, int size_vector = 3, unsigned int begStride = 0, bool reverse = false) {
+			initialize(v, c, t, size_vector, false, false, begStride);
+			initializeInstances(inst);
+			initializeIndices(i);
+			create(reverse);
 		}
 
 		void initializeSphere(unsigned int X_SEGMENTS = 64, unsigned int Y_SEGMENTS = 64) {
@@ -297,24 +285,6 @@ class VertexBuffers {
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 		}
 
-		//vec4 with position and texCoords in shader
-		void createFrameQuad(std::vector<float> v, bool c, bool t) {
-			vertices = v;
-			num_vertices = num_vertices = vertices.size() / (sizeof_vector + (c ? 3 : 0) + (t ? 2 : 0));
-
-			glGenVertexArrays(1, &vao);
-			glGenBuffers(1, &vbo);
-
-			glBindBuffer(GL_ARRAY_BUFFER, vbo);
-			glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
-
-			glBindVertexArray(vao);
-			glEnableVertexAttribArray(0);
-			glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GL_FLOAT), (GLvoid*)0);
-			glBindBuffer(GL_ARRAY_BUFFER, 0);
-			glBindVertexArray(0);
-		}
-
 		~VertexBuffers() {
 			glDeleteVertexArrays(1, &vao);
 			glDeleteVertexArrays(1, &vbo);
@@ -323,51 +293,21 @@ class VertexBuffers {
 		}
 
 		void draw(GLenum primitive = GL_TRIANGLES) {
-			glBindVertexArray(vao);
-			if (has_indices) {
-				glDrawElements(primitive, num_indices, GL_UNSIGNED_INT, 0);
-			}
-			else {
-				glDrawArrays(primitive, 0, num_vertices);
-			}
-			glBindVertexArray(0);
+			bindAndDraw(primitive);
 		}
 
 		void draw(std::string textureName, GLenum primitive = GL_TRIANGLES, bool cube = false, int active = 0) {
 			TextureManager::instance()->get(textureName)->bind(active, -1, cube);
-
-			glBindVertexArray(vao);
-			if (has_indices) {
-				glDrawElements(primitive, num_indices, GL_UNSIGNED_INT, 0);
-			}
-			else {
-				glDrawArrays(primitive, 0, num_vertices);
-			}
-			glBindVertexArray(0);
+			bindAndDraw(primitive);
 		}
 
 		void drawInst(int instances, GLenum primitive = GL_TRIANGLES) {
-			glBindVertexArray(vao);
-			if (has_indices) {
-				glDrawElementsInstanced(primitive, num_indices, GL_UNSIGNED_INT, 0, instances);
-			}
-			else {
-				glDrawArraysInstanced(primitive, 0, num_vertices, instances);
-			}
-			glBindVertexArray(0);
+			bindAndDraw(primitive, instances);
 		}
 
 		void drawInst(std::string textureName, int instances, GLenum primitive = GL_TRIANGLES, int active = 0) {
 			TextureManager::instance()->get(textureName)->bind(active);
-
-			glBindVertexArray(vao);
-			if (has_indices) {
-				glDrawElementsInstanced(primitive, num_indices, GL_UNSIGNED_INT, 0, instances);
-			}
-			else {
-				glDrawArraysInstanced(primitive, 0, num_vertices, instances);
-			}
-			glBindVertexArray(0);
+			bindAndDraw(primitive, instances);
 		}
 };
 
