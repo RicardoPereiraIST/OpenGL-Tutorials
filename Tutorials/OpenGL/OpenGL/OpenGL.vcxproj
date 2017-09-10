@@ -318,7 +318,7 @@
   <ItemGroup>
     <ClInclude Include="Classes\Camera\Camera.h" />
     <ClInclude Include="Classes\Camera\CameraManager.h" />
-    <ClInclude Include="Classes\Debug\Debug.h" />
+    <ClInclude Include="Classes\DebugClass\Debug.h" />
     <ClInclude Include="Classes\FrameBuffer\FrameBuffer.h" />
     <ClInclude Include="Classes\FrameBuffer\FrameBufferManager.h" />
     <ClInclude Include="Classes\Init\Init.h" />

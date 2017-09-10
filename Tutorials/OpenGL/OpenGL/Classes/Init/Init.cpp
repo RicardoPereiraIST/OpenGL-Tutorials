@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Init.h"
-#include "..\Debug\Debug.h"
+#include "..\DebugClass\Debug.h"
 
 unsigned int Init::width, Init::height;
 

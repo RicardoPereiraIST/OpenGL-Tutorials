@@ -202,9 +202,6 @@
     <Filter Include="Source Files\Images\PBR\rustediron1-alt2-Unreal-Engine">
       <UniqueIdentifier>{e36d36a8-1661-475e-8ea4-45929673dc3c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Classes\Debug">
-      <UniqueIdentifier>{ac98df22-0e6e-445c-b1a8-4f9970125422}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Shaders\Text">
       <UniqueIdentifier>{4b803cdd-2fa9-4048-8b1c-1704e1971da6}</UniqueIdentifier>
     </Filter>
@@ -264,6 +261,9 @@
     </Filter>
     <Filter Include="Source Files\Music\Tracks">
       <UniqueIdentifier>{43140512-f176-401a-b687-7f03ebdb2173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\DebugClass">
+      <UniqueIdentifier>{ac98df22-0e6e-445c-b1a8-4f9970125422}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -862,9 +862,6 @@
     <ClInclude Include="Dependencies\stb_image.h">
       <Filter>Source Files\Dependencies</Filter>
     </ClInclude>
-    <ClInclude Include="Classes\Debug\Debug.h">
-      <Filter>Source Files\Classes\Debug</Filter>
-    </ClInclude>
     <ClInclude Include="Programs\Render_Text\Render_Text.h">
       <Filter>Source Files\Programs\Render_Text</Filter>
     </ClInclude>
@@ -921,6 +918,9 @@
     </ClInclude>
     <ClInclude Include="Programs\Breakout\GameObject\PowerUp.h">
       <Filter>Source Files\Programs\Breakout\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\DebugClass\Debug.h">
+      <Filter>Source Files\Classes\DebugClass</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
