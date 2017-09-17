@@ -65,13 +65,14 @@ public:
 
 	void blitToDefault(std::string read, int width, int height, GLenum type = GL_COLOR_BUFFER_BIT) {
 		FrameBufferManager::instance()->get(read)->bind(GL_READ_FRAMEBUFFER);
-		glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+		unbind(GL_DRAW_FRAMEBUFFER);
 		glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, type, GL_NEAREST);
 		unbind();
 	}
 
-	void unbind() {
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	void unbind(GLenum option = GL_FRAMEBUFFER) {
+		if(!FrameBuffer::checkBound(0, GL_FRAMEBUFFER))
+			glBindFramebuffer(option, 0);
 	}
 };
 

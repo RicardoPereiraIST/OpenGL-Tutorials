@@ -14,6 +14,8 @@ public:
 
 class FrameBuffer {
 	private:
+		friend class FrameBufferManager;
+
 		unsigned int fbo, rbo;
 		unsigned int *fboBuffers;
 		unsigned int msfbo;
@@ -116,6 +118,29 @@ class FrameBuffer {
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		}
 
+		static bool checkBound(unsigned int buffer, GLenum option){
+			GLenum binding = GL_FRAMEBUFFER_BINDING;
+			if (option == GL_READ_FRAMEBUFFER)
+				binding = GL_READ_FRAMEBUFFER_BINDING;
+			else if (option == GL_DRAW_FRAMEBUFFER)
+				binding = GL_DRAW_FRAMEBUFFER_BINDING;
+			else if (option == GL_RENDERBUFFER)
+				binding = GL_RENDERBUFFER_BINDING;
+
+			int bound;
+			glGetIntegerv(binding, &bound);
+			return bound == buffer;
+		}
+
+		void bindPartial(unsigned int buffer) {
+			if (!checkBound(fbo, GL_READ_FRAMEBUFFER)) {
+				glBindFramebuffer(GL_READ_FRAMEBUFFER, buffer);
+			}
+			if (!checkBound(fbo, GL_DRAW_FRAMEBUFFER)) {
+				glBindFramebuffer(GL_DRAW_FRAMEBUFFER, buffer);
+			}
+		}
+
 	public:
 		FrameBuffer(int frameSize = 1) {
 			n_buffers = frameSize;
@@ -196,9 +221,11 @@ class FrameBuffer {
 			type = stencil ? GL_DEPTH24_STENCIL8 : GL_DEPTH_COMPONENT24;
 			attachment = stencil ? GL_DEPTH_STENCIL_ATTACHMENT : GL_DEPTH_ATTACHMENT;
 
-			glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+			if(!checkBound(rbo, GL_RENDERBUFFER))
+				glBindRenderbuffer(GL_RENDERBUFFER, rbo);
 			glRenderbufferStorage(GL_RENDERBUFFER, type, width, height);
-			glBindRenderbuffer(GL_RENDERBUFFER, 0);
+			if (!checkBound(0, GL_RENDERBUFFER))
+				glBindRenderbuffer(GL_RENDERBUFFER, 0);
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, attachment, GL_RENDERBUFFER, rbo);
 		}
 
@@ -209,9 +236,11 @@ class FrameBuffer {
 			type = color ? GL_RGB : stencil ? GL_DEPTH24_STENCIL8 : GL_DEPTH_COMPONENT24;
 			attachment = color ? GL_COLOR_ATTACHMENT0 : stencil ? GL_DEPTH_STENCIL_ATTACHMENT : GL_DEPTH_ATTACHMENT;
 
-			glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+			if (!checkBound(rbo, GL_RENDERBUFFER))
+				glBindRenderbuffer(GL_RENDERBUFFER, rbo);
 			glRenderbufferStorageMultisample(GL_RENDERBUFFER, samples, type, width, height);
-			glBindRenderbuffer(GL_RENDERBUFFER, 0);
+			if (!checkBound(0, GL_RENDERBUFFER))
+				glBindRenderbuffer(GL_RENDERBUFFER, 0);
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, attachment, GL_RENDERBUFFER, rbo);
 		}
 
@@ -220,7 +249,8 @@ class FrameBuffer {
 			type = stencil ? GL_DEPTH24_STENCIL8 : GL_DEPTH_COMPONENT24;
 			attachment = stencil ? GL_DEPTH_STENCIL_ATTACHMENT : GL_DEPTH_ATTACHMENT;
 
-			glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+			if (!checkBound(rbo, GL_RENDERBUFFER))
+				glBindRenderbuffer(GL_RENDERBUFFER, rbo);
 			glRenderbufferStorage(GL_RENDERBUFFER, type, width, height);
 		}
 
@@ -237,15 +267,33 @@ class FrameBuffer {
 		}
 
 		void bind(GLenum option = GL_FRAMEBUFFER) {
-			glBindFramebuffer(option, fbo);
+			if (!checkBound(fbo, option)) {
+				if (option == GL_FRAMEBUFFER) {
+					bindPartial(fbo);
+					return;
+				}
+				glBindFramebuffer(option, fbo);
+			}
 		}
 
 		void bindMultisampled(GLenum option = GL_FRAMEBUFFER) {
-			glBindFramebuffer(option, msfbo);
+			if (!checkBound(msfbo, option)) {
+				if (option == GL_FRAMEBUFFER) {
+					bindPartial(msfbo);
+					return;
+				}
+				glBindFramebuffer(option, msfbo);
+			}
 		}
 
 		void bindIndex(int i, GLenum option = GL_FRAMEBUFFER) {
-			glBindFramebuffer(option, fboBuffers[i]);
+			if (!checkBound(fboBuffers[i], option)) {
+				if (option == GL_FRAMEBUFFER) {
+					bindPartial(fboBuffers[i]);
+					return;
+				}
+				glBindFramebuffer(option, fboBuffers[i]);
+			}
 		}
 };
 
